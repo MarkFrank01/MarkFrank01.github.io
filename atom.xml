@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huaji8.top/"/>
-  <updated>2017-04-09T04:12:10.489Z</updated>
+  <updated>2017-04-11T01:29:46.214Z</updated>
   <id>https://huaji8.top/</id>
   
   <author>
@@ -14,6 +14,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>打造自定义刷新加载框架(一)</title>
+    <link href="https://huaji8.top/2017/04/10/MySwipeRefresh01/"/>
+    <id>https://huaji8.top/2017/04/10/MySwipeRefresh01/</id>
+    <published>2017-04-10T15:15:32.000Z</published>
+    <updated>2017-04-11T01:29:46.214Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;打造属于自己的刷新框架！&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="https://huaji8.top/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="https://huaji8.top/tags/Android/"/>
+    
+  </entry>
   
   <entry>
     <title>js异步和网络Api发展史</title>
