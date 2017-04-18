@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huaji8.top/"/>
-  <updated>2017-04-11T01:29:46.214Z</updated>
+  <updated>2017-04-18T09:03:22.430Z</updated>
   <id>https://huaji8.top/</id>
   
   <author>
@@ -16,11 +16,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>打造自定义刷新加载框架(二)</title>
+    <link href="https://huaji8.top/2017/04/11/MySwipeRefresh02/"/>
+    <id>https://huaji8.top/2017/04/11/MySwipeRefresh02/</id>
+    <published>2017-04-11T02:28:38.000Z</published>
+    <updated>2017-04-18T09:03:22.430Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;分析和使用优秀的刷新框架！&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="https://huaji8.top/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="https://huaji8.top/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
     <title>打造自定义刷新加载框架(一)</title>
     <link href="https://huaji8.top/2017/04/10/MySwipeRefresh01/"/>
     <id>https://huaji8.top/2017/04/10/MySwipeRefresh01/</id>
     <published>2017-04-10T15:15:32.000Z</published>
-    <updated>2017-04-11T01:29:46.214Z</updated>
+    <updated>2017-04-11T02:26:29.276Z</updated>
     
     <summary type="html">
     
@@ -99,11 +119,11 @@
       <category term="技术" scheme="https://huaji8.top/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
+      <category term="开源" scheme="https://huaji8.top/tags/%E5%BC%80%E6%BA%90/"/>
+    
       <category term="技术" scheme="https://huaji8.top/tags/%E6%8A%80%E6%9C%AF/"/>
     
       <category term="js" scheme="https://huaji8.top/tags/js/"/>
-    
-      <category term="开源" scheme="https://huaji8.top/tags/%E5%BC%80%E6%BA%90/"/>
     
       <category term="html" scheme="https://huaji8.top/tags/html/"/>
     
