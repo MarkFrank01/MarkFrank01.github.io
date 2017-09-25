@@ -119,7 +119,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -223,7 +223,13 @@
 <me.hwang.widgets.smartpullablelayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:library="http://schemas.android.com/apk/res-auto" android:id="@+id/layout_pullable" android:layout_width="match_parent" android:layout_height="match_parent" 设置拉动部分的背景="" library:smart_ui_background="#ffffee" 是否启用下拉功能(true为启用,false为禁用)="" library:smart_ui_enable_pull_down="false" 是否启用上拉功能(true为启用,false为禁用)="" library:smart_ui_enable_pull_up="false">
 
 
-<h3 id="不过光使用的话我们就没有学习的意义啦，所以我们还要去看看具体的实现"><a href="#不过光使用的话我们就没有学习的意义啦，所以我们还要去看看具体的实现" class="headerlink" title="不过光使用的话我们就没有学习的意义啦，所以我们还要去看看具体的实现"></a>不过光使用的话我们就没有学习的意义啦，所以我们还要去看看具体的实现</h3><p>首先我们把library导进来看看具体的实现<br><img src="http://i.imgur.com/VH6ndna.png" alt=""></p>
+<h3 id="不过光使用的话我们就没有学习的意义啦，所以我们还要去看看具体的实现"><a href="#不过光使用的话我们就没有学习的意义啦，所以我们还要去看看具体的实现" class="headerlink" title="不过光使用的话我们就没有学习的意义啦，所以我们还要去看看具体的实现"></a>不过光使用的话我们就没有学习的意义啦，所以我们还要去看看具体的实现</h3><p>首先我们把library导进来看看具体的实现<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://i.imgur.com/VH6ndna.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
 <p>哇 大家一看是不是突然觉得好复杂呀，其实不是哦，因为其中有一个加载界面和我们需要的刷新框架，那我们就看看它就行。</p>
 <p>先定义一个接口来标识状态信息</p>
 <pre><code>/**
@@ -383,12 +389,12 @@ public interface OnChildScrollDownCallback {
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-04-21T08:15:50.951Z" itemprop="dateUpdated">2017-04-21 16:15:50</time>
+    Last updated: <time datetime="2017-04-21T08:15:50.951Z" itemprop="dateUpdated">2017-04-21 16:15:50</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2017/04/14/MySwipeRefresh02/" target="_blank" rel="external">https://huaji8.top/2017/04/14/MySwipeRefresh02/</a>
+        小小鼓励一下哟~~，转发著名出处~~：<a href="/2017/04/14/MySwipeRefresh02/" target="_blank" rel="external">https://huaji8.top/2017/04/14/MySwipeRefresh02/</a>
         
     </div>
     <footer>
@@ -539,7 +545,7 @@ public interface OnChildScrollDownCallback {
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">

@@ -27,17 +27,17 @@
 <meta property="og:url" content="https://huaji8.top/2017/01/29/hexo的live2d插件/index.html">
 <meta property="og:site_name" content="Five">
 <meta property="og:description" content="为你的hexo添加色气满满的live2d吧！">
-<meta property="og:image" content="https://badge.fury.io/js/hexo-helper-live2d.svg">
+<meta property="og:image" content="https://badge.fury.io/js/hexo-helper-live2d">
 <meta property="og:image" content="https://huaji8.top/img/hexo的live2d插件/z16.jpg">
-<meta property="og:image" content="https://img.shields.io/badge/author-cneyhn-green.svg?style=flat-square">
-<meta property="og:image" content="https://img.shields.io/badge/QQ-1106996185-blue.svg?style=flat-square">
-<meta property="og:image" content="https://img.shields.io/badge/Emali%20me-cneyhn@gmail.com-green.svg?style=flat-square">
-<meta property="og:image" content="https://img.shields.io/github/license/EYHN/hexo-helper-live2d.svg?style=flat-square">
+<meta property="og:image" content="https://delusion.coding.me/">
+<meta property="og:image" content="http://wpa.qq.com/msgrd?v=3&uin=&site=qq&menu=yes">
+<meta property="og:image" content="https://img.shields.io/badge/Emali%20me-cneyhn@gmail.com-green.svg?style=flat-square)](">
+<meta property="og:image" content="https://raw.githubusercontent.com/EYHN/hexo-helper-live2d/master/LICENSE">
 <meta property="og:updated_time" content="2017-04-09T04:12:10.489Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo的live2d插件">
 <meta name="twitter:description" content="为你的hexo添加色气满满的live2d吧！">
-<meta name="twitter:image" content="https://badge.fury.io/js/hexo-helper-live2d.svg">
+<meta name="twitter:image" content="https://badge.fury.io/js/hexo-helper-live2d">
     
         <link rel="alternate" type="application/atom+xml" title="Five" href="/atom.xml">
     
@@ -124,7 +124,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -192,7 +192,13 @@
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>为你的hexo添加色气满满的live2d吧！</p>
 <a id="more"></a>
-<p><a href="https://badge.fury.io/js/hexo-helper-live2d" target="_blank" rel="external"><img src="https://badge.fury.io/js/hexo-helper-live2d.svg" alt="npm version"></a></p>
+<p>[<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://badge.fury.io/js/hexo-helper-live2d" alt="npm version](https://badge.fury.io/js/hexo-helper-live2d.svg)" title="">
+                </div>
+                <div class="image-caption">npm version](https://badge.fury.io/js/hexo-helper-live2d.svg)</div>
+            </figure></p>
 <div id="badge-container-EYHN-hexo-helper-live2d-81d768d" class="hexo-github" style="width: 100%"></div>
 <script src="/hexo-github/badge.js"></script>
 <script type="text/javascript">
@@ -204,7 +210,13 @@
 <h2 id="hexo-helper-live2d"><a href="#hexo-helper-live2d" class="headerlink" title="hexo-helper-live2d"></a>hexo-helper-live2d</h2><p>为你的hexo添加色气满满的live2d吧！</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -save hexo-helper-live2d</div></pre></td></tr></table></figure>
 <p><del>Example: <a href="https://delusion.coding.me/" target="_blank" rel="external">https://delusion.coding.me/</a></del></p>
-<p><img src="/img/hexo的live2d插件/z16.jpg" alt="范例图片" title="z16"></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/hexo的live2d插件/z16.jpg" alt="范例图片" title="z16">
+                </div>
+                <div class="image-caption">z16</div>
+            </figure>
 <h2 id="食用方法："><a href="#食用方法：" class="headerlink" title="食用方法："></a>食用方法：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -save hexo-helper-live2d</div></pre></td></tr></table></figure>
 <p>将下面的代码加入主题。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;canvas id=<span class="string">"live2dcanvas"</span> width=<span class="string">"300"</span> height=<span class="string">"600"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"live2d"</span>&gt;&lt;/canvas&gt;</div><div class="line">&lt;%- live2d(<span class="string">"live2dcanvas"</span>) %&gt;</div><div class="line">&lt;style&gt;</div><div class="line">.live2d&#123;</div><div class="line">  position: fixed;</div><div class="line">	bottom: -30px;</div><div class="line">	right: 0px;</div><div class="line">	z-index: 999;</div><div class="line">	width: 150px;</div><div class="line">	height: 300px;</div><div class="line">  pointer-events: none;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
@@ -216,8 +228,32 @@
 <p>Github: <a href="https://github.com/EYHN/hexo-helper-live2d" target="_blank" rel="external">https://github.com/EYHN/hexo-helper-live2d</a></p>
 <p>issues: <a href="https://github.com/EYHN/hexo-helper-live2d/issues" target="_blank" rel="external">https://github.com/EYHN/hexo-helper-live2d/issues</a></p>
 <p>求英文好的小伙伴提交一个英文版的README，直接提交PR就可以啦!</p>
-<h2 id="About-me"><a href="#About-me" class="headerlink" title="About me"></a>About me</h2><p><a href="https://delusion.coding.me/" target="_blank" rel="external"><img src="https://img.shields.io/badge/author-cneyhn-green.svg?style=flat-square" alt="Author"></a><br><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=&amp;site=qq&amp;menu=yes" target="_blank" rel="external"><img src="https://img.shields.io/badge/QQ-1106996185-blue.svg?style=flat-square" alt="QQ"></a><br><a href=""><img src="https://img.shields.io/badge/Emali%20me-cneyhn@gmail.com-green.svg?style=flat-square" alt="Email"></a></p>
-<h2 id="License-许可证"><a href="#License-许可证" class="headerlink" title="License 许可证"></a>License 许可证</h2><p><a href="https://raw.githubusercontent.com/EYHN/hexo-helper-live2d/master/LICENSE" target="_blank" rel="external"><img src="https://img.shields.io/github/license/EYHN/hexo-helper-live2d.svg?style=flat-square" alt="license"></a></p>
+<h2 id="About-me"><a href="#About-me" class="headerlink" title="About me"></a>About me</h2><p>[<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://delusion.coding.me/" alt="Author](https://img.shields.io/badge/author-cneyhn-green.svg?style=flat-square)" title="">
+                </div>
+                <div class="image-caption">Author](https://img.shields.io/badge/author-cneyhn-green.svg?style=flat-square)</div>
+            </figure><br>[<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://wpa.qq.com/msgrd?v=3&uin=&site=qq&menu=yes" alt="QQ](https://img.shields.io/badge/QQ-1106996185-blue.svg?style=flat-square)" title="">
+                </div>
+                <div class="image-caption">QQ](https://img.shields.io/badge/QQ-1106996185-blue.svg?style=flat-square)</div>
+            </figure><br>[<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://img.shields.io/badge/Emali%20me-cneyhn@gmail.com-green.svg?style=flat-square)](" alt="Email" title="">
+                </div>
+                <div class="image-caption">Email</div>
+            </figure></p>
+<h2 id="License-许可证"><a href="#License-许可证" class="headerlink" title="License 许可证"></a>License 许可证</h2><p>[<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/EYHN/hexo-helper-live2d/master/LICENSE" alt="license](https://img.shields.io/github/license/EYHN/hexo-helper-live2d.svg?style=flat-square)" title="">
+                </div>
+                <div class="image-caption">license](https://img.shields.io/github/license/EYHN/hexo-helper-live2d.svg?style=flat-square)</div>
+            </figure></p>
 <p>Open sourced under the GPL v2.0 license.</p>
 <p>根据 GPL V2.0 许可证开源。</p>
 
@@ -227,12 +263,12 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-04-09T04:12:10.489Z" itemprop="dateUpdated">2017-04-09 12:12:10</time>
+    Last updated: <time datetime="2017-04-09T04:12:10.489Z" itemprop="dateUpdated">2017-04-09 12:12:10</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2017/01/29/hexo的live2d插件/" target="_blank" rel="external">https://huaji8.top/2017/01/29/hexo的live2d插件/</a>
+        小小鼓励一下哟~~，转发著名出处~~：<a href="/2017/01/29/hexo的live2d插件/" target="_blank" rel="external">https://huaji8.top/2017/01/29/hexo的live2d插件/</a>
         
     </div>
     <footer>
@@ -383,7 +419,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">

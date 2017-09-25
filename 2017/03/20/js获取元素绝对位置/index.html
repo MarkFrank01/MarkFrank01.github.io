@@ -119,7 +119,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -186,7 +186,13 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//获取元素的纵坐标 </span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getTop</span>(<span class="params">e</span>)</span>&#123; </div><div class="line">  <span class="keyword">var</span> offset=e.offsetTop; </div><div class="line">  <span class="keyword">if</span>(e.offsetParent!=<span class="literal">null</span>) offset+=getTop(e.offsetParent); </div><div class="line">  <span class="keyword">return</span> offset; </div><div class="line">&#125; </div><div class="line"><span class="comment">//获取元素的横坐标 </span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getLeft</span>(<span class="params">e</span>)</span>&#123; </div><div class="line">  <span class="keyword">var</span> offset=e.offsetLeft; </div><div class="line">  <span class="keyword">if</span>(e.offsetParent!=<span class="literal">null</span>) offset+=getLeft(e.offsetParent); </div><div class="line">  <span class="keyword">return</span> offset; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>嗯 很合理嘛 Element.offsetTop + 递归。</p>
 <p>可偶然发现这是获取元素在文档流中的位置，但 transform 属性是不会改变文档流中的位置的。好，我们换一个方法。结果百度 google翻了几页都是这一个方法</p>
-<p><img src="/img/表情/喷.png" alt=""></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/表情/喷.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
 <p>继续寻找，突然想到jq，试了一下jq的offset方法，完美支持 transform 属性，mmp。</p>
 <p>经查看jq源码，方法如下：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">offset: <span class="function"><span class="keyword">function</span>(<span class="params"> options </span>) </span>&#123;</div><div class="line">  <span class="comment">// Preserve chaining for setter</span></div><div class="line">  <span class="keyword">if</span> ( <span class="built_in">arguments</span>.length ) &#123;</div><div class="line">    <span class="keyword">return</span> options === <span class="literal">undefined</span> ?</div><div class="line">      <span class="keyword">this</span> :</div><div class="line">      <span class="keyword">this</span>.each( <span class="function"><span class="keyword">function</span>(<span class="params"> i </span>) </span>&#123;</div><div class="line">        jQuery.offset.setOffset( <span class="keyword">this</span>, options, i );</div><div class="line">      &#125; );</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">var</span> doc, docElem, rect, win,</div><div class="line">    elem = <span class="keyword">this</span>[ <span class="number">0</span> ];</div><div class="line"></div><div class="line">  <span class="keyword">if</span> ( !elem ) &#123;</div><div class="line">    <span class="keyword">return</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">// Return zeros for disconnected and hidden (display: none) elements (gh-2310)</span></div><div class="line">  <span class="comment">// Support: IE &lt;=11 only</span></div><div class="line">  <span class="comment">// Running getBoundingClientRect on a</span></div><div class="line">  <span class="comment">// disconnected node in IE throws an error</span></div><div class="line">  <span class="keyword">if</span> ( !elem.getClientRects().length ) &#123;</div><div class="line">    <span class="keyword">return</span> &#123; <span class="attr">top</span>: <span class="number">0</span>, <span class="attr">left</span>: <span class="number">0</span> &#125;;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  rect = elem.getBoundingClientRect();</div><div class="line"></div><div class="line">  doc = elem.ownerDocument;</div><div class="line">  docElem = doc.documentElement;</div><div class="line">  win = doc.defaultView;</div><div class="line"></div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    <span class="attr">top</span>: rect.top + win.pageYOffset - docElem.clientTop,</div><div class="line">    <span class="attr">left</span>: rect.left + win.pageXOffset - docElem.clientLeft</div><div class="line">  &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -209,12 +215,12 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-04-09T04:12:10.489Z" itemprop="dateUpdated">2017-04-09 12:12:10</time>
+    Last updated: <time datetime="2017-04-09T04:12:10.489Z" itemprop="dateUpdated">2017-04-09 12:12:10</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2017/03/20/js获取元素绝对位置/" target="_blank" rel="external">https://huaji8.top/2017/03/20/js获取元素绝对位置/</a>
+        小小鼓励一下哟~~，转发著名出处~~：<a href="/2017/03/20/js获取元素绝对位置/" target="_blank" rel="external">https://huaji8.top/2017/03/20/js获取元素绝对位置/</a>
         
     </div>
     <footer>
@@ -373,7 +379,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">
