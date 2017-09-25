@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Five</title>
+  
   <subtitle>Enjoy Code</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huaji8.top/"/>
-  <updated>2017-04-18T09:03:22.430Z</updated>
+  <updated>2017-04-21T08:15:50.951Z</updated>
   <id>https://huaji8.top/</id>
   
   <author>
@@ -17,10 +18,10 @@
   
   <entry>
     <title>打造自定义刷新加载框架(二)</title>
-    <link href="https://huaji8.top/2017/04/11/MySwipeRefresh02/"/>
-    <id>https://huaji8.top/2017/04/11/MySwipeRefresh02/</id>
-    <published>2017-04-11T02:28:38.000Z</published>
-    <updated>2017-04-18T09:03:22.430Z</updated>
+    <link href="https://huaji8.top/2017/04/14/MySwipeRefresh02/"/>
+    <id>https://huaji8.top/2017/04/14/MySwipeRefresh02/</id>
+    <published>2017-04-14T02:28:38.000Z</published>
+    <updated>2017-04-21T08:15:50.951Z</updated>
     
     <summary type="html">
     
