@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>RxLearning(RxJava 和 Retrofit学习系列) | Five | Enjoy Code</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Android,网络,技术">
+    <meta name="description" content="开端本系列RxLearning 一共四季12篇 本篇是第一季第一篇这个系列分别通过学习Rxjava,学习Retrofit 以及它们的结合使用进来新的世界RxJava 到底是什么？我为什么需要去学习它？我该如何去学习？别急我们一个个来分析。目前一些资料已经比较成熟，老规矩我们先放上一些资料的推荐再结合资料进行我们自己的学习。 首先掏出传世神作 来自扔物线大神的 《给 Android 开发者的 RxJ">
+<meta name="keywords" content="Android,网络,技术">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RxLearning(RxJava 和 Retrofit学习系列)">
+<meta property="og:url" content="https://markfrank01.github.io/2017/09/15/RxLearning第一季第一篇/index.html">
+<meta property="og:site_name" content="Five">
+<meta property="og:description" content="开端本系列RxLearning 一共四季12篇 本篇是第一季第一篇这个系列分别通过学习Rxjava,学习Retrofit 以及它们的结合使用进来新的世界RxJava 到底是什么？我为什么需要去学习它？我该如何去学习？别急我们一个个来分析。目前一些资料已经比较成熟，老规矩我们先放上一些资料的推荐再结合资料进行我们自己的学习。 首先掏出传世神作 来自扔物线大神的 《给 Android 开发者的 RxJ">
+<meta property="og:updated_time" content="2017-10-01T12:51:18.832Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RxLearning(RxJava 和 Retrofit学习系列)">
+<meta name="twitter:description" content="开端本系列RxLearning 一共四季12篇 本篇是第一季第一篇这个系列分别通过学习Rxjava,学习Retrofit 以及它们的结合使用进来新的世界RxJava 到底是什么？我为什么需要去学习它？我该如何去学习？别急我们一个个来分析。目前一些资料已经比较成熟，老规矩我们先放上一些资料的推荐再结合资料进行我们自己的学习。 首先掏出传世神作 来自扔物线大神的 《给 Android 开发者的 RxJ">
+    
+        <link rel="alternate" type="application/atom+xml" title="Five" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/cat.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">嘉晨</h5>
+          <a href="mailto:1123212438@qq.com" title="1123212438@qq.com" class="mail">1123212438@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/MarkFrank01" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">RxLearning(RxJava 和 Retrofit学习系列)</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">RxLearning(RxJava 和 Retrofit学习系列)</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-09-15T08:39:05.000Z" itemprop="datePublished" class="page-time">
+  2017-09-15
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#开端"><span class="post-toc-number">1.</span> <span class="post-toc-text">开端</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#本系列RxLearning-一共四季12篇-本篇是第一季第一篇"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">本系列RxLearning 一共四季12篇 本篇是第一季第一篇</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#这个系列分别通过学习Rxjava-学习Retrofit-以及它们的结合使用进来新的世界"><span class="post-toc-number">1.1.0.1.</span> <span class="post-toc-text">这个系列分别通过学习Rxjava,学习Retrofit 以及它们的结合使用进来新的世界</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#引入"><span class="post-toc-number">2.</span> <span class="post-toc-text">引入</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Rxjava是什么？"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">Rxjava是什么？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#我为什么需要学习它？"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">我为什么需要学习它？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#我该如何去学习？"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">我该如何去学习？</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-RxLearning第一季第一篇"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">RxLearning(RxJava 和 Retrofit学习系列)</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-09-15 16:39:05" datetime="2017-09-15T08:39:05.000Z"  itemprop="datePublished">2017-09-15</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="开端"><a href="#开端" class="headerlink" title="开端"></a>开端</h1><h2 id="本系列RxLearning-一共四季12篇-本篇是第一季第一篇"><a href="#本系列RxLearning-一共四季12篇-本篇是第一季第一篇" class="headerlink" title="本系列RxLearning 一共四季12篇 本篇是第一季第一篇"></a>本系列RxLearning 一共四季12篇 本篇是第一季第一篇</h2><h4 id="这个系列分别通过学习Rxjava-学习Retrofit-以及它们的结合使用进来新的世界"><a href="#这个系列分别通过学习Rxjava-学习Retrofit-以及它们的结合使用进来新的世界" class="headerlink" title="这个系列分别通过学习Rxjava,学习Retrofit 以及它们的结合使用进来新的世界"></a>这个系列分别通过学习Rxjava,学习Retrofit 以及它们的结合使用进来新的世界</h4><p>RxJava 到底是什么？我为什么需要去学习它？我该如何去学习？别急我们一个个来分析。目前一些资料已经比较成熟，老规矩我们先放上一些资料的推荐再结合资料进行我们自己的学习。</p>
+<p>首先掏出传世神作 来自扔物线大神的 <a href="http://gank.io/post/560e15be2dca930e00da1083" target="_blank" rel="external">《给 Android 开发者的 RxJava 详解》</a></p>
+<p>然后还有通俗易懂的 Season_zlc的 <a href="http://www.jianshu.com/u/c50b715ccaeb" target="_blank" rel="external">《给初学者的RxJava2.0教程》</a></p>
+<p>废话少说开始我们的表演。</p>
+<h1 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h1><h3 id="Rxjava是什么？"><a href="#Rxjava是什么？" class="headerlink" title="Rxjava是什么？"></a>Rxjava是什么？</h3><blockquote>
+<p>“RxJava – Reactive Extensions for the JVM – a library for composing asynchronous and event-based programs using observable sequences for the Java VM.”</p>
+</blockquote>
+<p>相信很多人一看就有点慌，别怕 这个官方的定义：一个在 Java VM 上使用可观测的序列来组成异步的、基于事件的程序的库。对于初学者不是很友好，最初我也是看的一脸疑问，但是我们开始的时候记住一个关键词就够了：异步，从本质上来说其它的操作都是围绕这个词进行的展开。</p>
+<h3 id="我为什么需要学习它？"><a href="#我为什么需要学习它？" class="headerlink" title="我为什么需要学习它？"></a>我为什么需要学习它？</h3><p>话我觉得可以借用一句话来说明：</p>
+<blockquote>
+<p><strong>Write Less Do More</strong></p>
+</blockquote>
+<p><strong>简洁</strong> 二字贯穿其中，异步的操作随着逻辑越来越复杂，异步代码也经常会既难写也难被读懂，Rxjava相比于其它的方法，比如handle和AsyncTask 优势都是简洁， 不过Rxjava的链式调用使得即使程序逻辑变得越来越复杂，它依然能够保持简洁。</p>
+<p>参考参考之前扔物线的资料：</p>
+<blockquote>
+<p>   “假设有这样一个需求：界面上有一个自定义的视图 imageCollectorView ，它的作用是显示多张图片，并能使用 addImage(Bitmap) 方法来任意增加显示的图片。现在需要程序将一个给出的目录数组 File[] folders 中每个目录下的 png 图片都加载出来并显示在 imageCollectorView 中。需要注意的是，由于读取图片的这一过程较为耗时，需要放在后台执行，而图片的显示则必须在 UI 线程执行”。</p>
+</blockquote>
+<p>拿出一种实现方式：</p>
+<pre><code>new Thread() {
+@Override
+public void run() {
+    super.run();
+    for (File folder : folders) {
+        File[] files = folder.listFiles();
+        for (File file : files) {
+            if (file.getName().endsWith(&quot;.png&quot;)) {
+                final Bitmap bitmap = getBitmapFromFile(file);
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        imageCollectorView.addImage(bitmap);
+                    }
+                });
+            }
+        }
+    }
+  }
+}.start(); 
+</code></pre><p>而如果使用 RxJava ，实现方式是这样的：</p>
+<pre><code>Observable.from(folders)
+.flatMap(new Func1&lt;File, Observable&lt;File&gt;&gt;() {
+    @Override
+    public Observable&lt;File&gt; call(File file) {
+        return Observable.from(file.listFiles());
+    }
+})
+.filter(new Func1&lt;File, Boolean&gt;() {
+    @Override
+    public Boolean call(File file) {
+        return file.getName().endsWith(&quot;.png&quot;);
+    }
+})
+.map(new Func1&lt;File, Bitmap&gt;() {
+    @Override
+    public Bitmap call(File file) {
+        return getBitmapFromFile(file);
+    }
+})
+.subscribeOn(Schedulers.io())
+.observeOn(AndroidSchedulers.mainThread())
+.subscribe(new Action1&lt;Bitmap&gt;() {
+    @Override
+    public void call(Bitmap bitmap) {
+        imageCollectorView.addImage(bitmap);
+    }
+});
+</code></pre><p>什么？说好的简洁呢？不用担心，扔物线大神已经告诉了我们，代码简洁不单单是数量上的简洁，逻辑的简洁才更能提升读写的速度。通过这个例子我们大致的了解了一下学习它的原因和简洁的含义，我们接着往下走。</p>
+<h3 id="我该如何去学习？"><a href="#我该如何去学习？" class="headerlink" title="我该如何去学习？"></a>我该如何去学习？</h3><p>其实写到这有部分老哥们是有疑问的，既然开篇放上了大神资料我为啥还要看你这篇呢？图样图森破，吸取精华，根据自身进行沉淀，这才是提升自己能力并加强学习能力最好的方式。不同于深入的原理分析，不同于单纯的操作符介绍，我们这个系列将通过实例来一步步去学习。</p>
+<p>附录上<a href="https://github.com/MarkFrank01/LearningRxJavaAndRtrofit" target="_blank" rel="external">Demo</a>地址。<br>（PS:其实例子是我先已经写出来啦，只是拖更加上没有及时提交更新~ 不过下篇肯定不拖更哦）</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-10-01T12:51:18.832Z" itemprop="dateUpdated">2017-10-01 20:51:18</time>
+</span><br>
+
+
+        
+        小小鼓励一下哟~~，转发著名出处~~：<a href="/2017/09/15/RxLearning第一季第一篇/" target="_blank" rel="external">https://markfrank01.github.io/2017/09/15/RxLearning第一季第一篇/</a>
+        
+    </div>
+    <footer>
+        <a href="https://markfrank01.github.io">
+            <img src="/img/cat.jpg" alt="嘉晨">
+            嘉晨
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络/">网络</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://markfrank01.github.io/2017/09/15/RxLearning第一季第一篇/&title=《RxLearning(RxJava 和 Retrofit学习系列)》 — Five&pic=https://markfrank01.github.io/img/cat.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://markfrank01.github.io/2017/09/15/RxLearning第一季第一篇/&title=《RxLearning(RxJava 和 Retrofit学习系列)》 — Five&source=我挥舞着键盘和本子，发誓要把世界写个明明白白" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://markfrank01.github.io/2017/09/15/RxLearning第一季第一篇/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《RxLearning(RxJava 和 Retrofit学习系列)》 — Five&url=https://markfrank01.github.io/2017/09/15/RxLearning第一季第一篇/&via=https://markfrank01.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://markfrank01.github.io/2017/09/15/RxLearning第一季第一篇/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/04/14/MySwipeRefresh02/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">打造自定义刷新加载框架(二)</h4>
+      </a>
+    </div>
+  
+
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大家~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechatpay.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechatpay.jpg" data-alipay="/img/alipayMe.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>嘉晨 &copy; 2015 - 2017</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://markfrank01.github.io/2017/09/15/RxLearning第一季第一篇/&title=《RxLearning(RxJava 和 Retrofit学习系列)》 — Five&pic=https://markfrank01.github.io/img/cat.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://markfrank01.github.io/2017/09/15/RxLearning第一季第一篇/&title=《RxLearning(RxJava 和 Retrofit学习系列)》 — Five&source=我挥舞着键盘和本子，发誓要把世界写个明明白白" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://markfrank01.github.io/2017/09/15/RxLearning第一季第一篇/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《RxLearning(RxJava 和 Retrofit学习系列)》 — Five&url=https://markfrank01.github.io/2017/09/15/RxLearning第一季第一篇/&via=https://markfrank01.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://markfrank01.github.io/2017/09/15/RxLearning第一季第一篇/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACrUlEQVR42u3a22rCUBAFUP//py30SSjRPZejFlaeipp4loWcyZ653eLj/ns8/v14JJ95fPfvZ66+6/kn1w48PDy81tKfL6j6mStwAkvYyXrw8PDwTvPyzaC63Oe3+Mkrz9eMh4eH9w28agWblODVK+Ph4eH9d14STCRbRQLGw8PD+zZeEjQkG0Dvtl69/pGsBQ8PDy/mTcrZT/19vL+Hh4eH1+qqV8vlybfkW0thtXh4eHgHeJNAIX93MnSVF8qFJwY8PDy8A7zk8b43ODVpieWbyouNAQ8PD2/AO93Uz7eErUGrF08MeHh4eEu8pAXVGwXohcVbxToeHh7eOV71Np2cNVlir8iOcl88PDy8Jd5kQCqPBnqwfKO67O/h4eHhHeDl5XK1FO5tLQkvWgkeHh7eAV5e7CaLmAS41YC4HIjg4eHhrfISfXLTryJ7wUcZjIeHh7fKqw5FVaOBeRRbjY/x8PDwTvOaLfkgCKgOWiWMZsMMDw8P7wCvVxZX21Rbm03vAQAPDw9vl1cduuoV1vnr1cbbiyvg4eHhrfLyMney3Gqk22t3lf9veHh4eANecoPOAb0AorcNRDNleHh4eKu8XiurNzpQPTf/oQthBB4eHt4qb14cT4KMXnOrkLXg4eHhrfLyIjU5OW909Qrl3TIdDw8Pr8qrhg7JaNS8dJ6U+Hh4eHif4uXDUvkPVG3/569cfiMeHh7eAV6hjTRojOVXnhTceHh4eO/h3YtHtQiutq/yGDc6Cw8PD+8Ar1f4ToKJvDE2GVDAw8PDO83r3eLnlXtv3Gqtg4eHh4c35s2/PhkgmLTNmhY8PDy8j/LygaekiZWU3fPmGR4eHt638d6TkYwKbjw8PLxjvF4YMWmb9Zael/t4eHh453hbWehWfJAX5c1uHh4eHl6f9wMTtyvwhQzAYQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '回来~';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '๑乛◡乛๑';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
