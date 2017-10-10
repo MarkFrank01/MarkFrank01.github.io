@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://markfrank01.github.io/"/>
-  <updated>2017-10-10T15:06:43.081Z</updated>
+  <updated>2017-10-10T15:09:24.956Z</updated>
   <id>https://markfrank01.github.io/</id>
   
   <author>
@@ -20,8 +20,8 @@
     <title>Git笔记----Git的使用</title>
     <link href="https://markfrank01.github.io/2017/10/10/Git%E7%AC%94%E8%AE%B0/"/>
     <id>https://markfrank01.github.io/2017/10/10/Git笔记/</id>
-    <published>2017-10-10T15:07:14.667Z</published>
-    <updated>2017-10-10T15:06:43.081Z</updated>
+    <published>2017-10-10T08:15:43.000Z</published>
+    <updated>2017-10-10T15:09:24.956Z</updated>
     
     <summary type="html">
     
@@ -167,9 +167,9 @@
       <category term="技术" scheme="https://markfrank01.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="开源" scheme="https://markfrank01.github.io/tags/%E5%BC%80%E6%BA%90/"/>
-    
       <category term="技术" scheme="https://markfrank01.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="开源" scheme="https://markfrank01.github.io/tags/%E5%BC%80%E6%BA%90/"/>
     
       <category term="js" scheme="https://markfrank01.github.io/tags/js/"/>
     
