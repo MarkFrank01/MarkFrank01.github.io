@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://markfrank01.github.io/"/>
-  <updated>2017-10-01T12:51:18.832Z</updated>
+  <updated>2017-10-10T15:06:43.081Z</updated>
   <id>https://markfrank01.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Git笔记----Git的使用</title>
+    <link href="https://markfrank01.github.io/2017/10/10/Git%E7%AC%94%E8%AE%B0/"/>
+    <id>https://markfrank01.github.io/2017/10/10/Git笔记/</id>
+    <published>2017-10-10T15:07:14.667Z</published>
+    <updated>2017-10-10T15:06:43.081Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Git学习和使用全记录&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Git" scheme="https://markfrank01.github.io/categories/Git/"/>
+    
+    
+      <category term="Git" scheme="https://markfrank01.github.io/tags/Git/"/>
+    
+  </entry>
   
   <entry>
     <title>RxLearning(RxJava 和 Retrofit学习系列)</title>
@@ -147,13 +167,13 @@
       <category term="技术" scheme="https://markfrank01.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
+      <category term="开源" scheme="https://markfrank01.github.io/tags/%E5%BC%80%E6%BA%90/"/>
+    
       <category term="技术" scheme="https://markfrank01.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
     
       <category term="js" scheme="https://markfrank01.github.io/tags/js/"/>
     
       <category term="html" scheme="https://markfrank01.github.io/tags/html/"/>
-    
-      <category term="开源" scheme="https://markfrank01.github.io/tags/%E5%BC%80%E6%BA%90/"/>
     
   </entry>
   
@@ -198,11 +218,11 @@
       <category term="项目" scheme="https://markfrank01.github.io/categories/%E9%A1%B9%E7%9B%AE/"/>
     
     
-      <category term="开源" scheme="https://markfrank01.github.io/tags/%E5%BC%80%E6%BA%90/"/>
-    
       <category term="Hexo" scheme="https://markfrank01.github.io/tags/Hexo/"/>
     
       <category term="发布" scheme="https://markfrank01.github.io/tags/%E5%8F%91%E5%B8%83/"/>
+    
+      <category term="开源" scheme="https://markfrank01.github.io/tags/%E5%BC%80%E6%BA%90/"/>
     
       <category term="one" scheme="https://markfrank01.github.io/tags/one/"/>
     
@@ -244,11 +264,11 @@
       <category term="项目" scheme="https://markfrank01.github.io/categories/%E9%A1%B9%E7%9B%AE/"/>
     
     
-      <category term="开源" scheme="https://markfrank01.github.io/tags/%E5%BC%80%E6%BA%90/"/>
-    
       <category term="Hexo" scheme="https://markfrank01.github.io/tags/Hexo/"/>
     
       <category term="发布" scheme="https://markfrank01.github.io/tags/%E5%8F%91%E5%B8%83/"/>
+    
+      <category term="开源" scheme="https://markfrank01.github.io/tags/%E5%BC%80%E6%BA%90/"/>
     
   </entry>
   
