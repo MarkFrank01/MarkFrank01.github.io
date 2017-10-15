@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://markfrank01.github.io/"/>
-  <updated>2017-10-14T15:56:43.809Z</updated>
+  <updated>2017-10-15T12:53:41.972Z</updated>
   <id>https://markfrank01.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>行动指南</title>
+    <link href="https://markfrank01.github.io/2017/10/15/%E8%A1%8C%E5%8A%A8%E6%8C%87%E5%8D%97/"/>
+    <id>https://markfrank01.github.io/2017/10/15/行动指南/</id>
+    <published>2017-10-15T11:47:36.000Z</published>
+    <updated>2017-10-15T12:53:41.972Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;近期行动指南&quot;&gt;&lt;a href=&quot;#近期行动指南&quot; class=&quot;headerlink&quot; title=&quot;近期行动指南&quot;&gt;&lt;/a&gt;近期行动指南&lt;/h2&gt;&lt;p&gt;为什么要写这个&lt;strong&gt;行动指南&lt;/strong&gt;呢？ 因为最近状态并不是特别棒，所以写下此文作为近期
+      
+    
+    </summary>
+    
+      <category term="生活" scheme="https://markfrank01.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="生活" scheme="https://markfrank01.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>Git笔记----Git的使用</title>
@@ -167,9 +190,9 @@
       <category term="技术" scheme="https://markfrank01.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="技术" scheme="https://markfrank01.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
-    
       <category term="开源" scheme="https://markfrank01.github.io/tags/%E5%BC%80%E6%BA%90/"/>
+    
+      <category term="技术" scheme="https://markfrank01.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
     
       <category term="js" scheme="https://markfrank01.github.io/tags/js/"/>
     
