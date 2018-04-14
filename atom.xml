@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://markfrank01.github.io/"/>
-  <updated>2017-10-15T12:53:41.972Z</updated>
+  <updated>2018-04-14T00:44:14.235Z</updated>
   <id>https://markfrank01.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>四大组件之Activity</title>
+    <link href="https://markfrank01.github.io/2018/01/01/Activity/"/>
+    <id>https://markfrank01.github.io/2018/01/01/Activity/</id>
+    <published>2018-01-01T14:15:32.000Z</published>
+    <updated>2018-04-14T00:44:14.235Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;引言&quot;&gt;&lt;a href=&quot;#引言&quot; class=&quot;headerlink&quot; title=&quot;引言&quot;&gt;&lt;/a&gt;引言&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;开启一个新的系列目的一是为了整理和巩固基础的知识，3月底要进军企鹅，二是为了给
+      
+    
+    </summary>
+    
+      <category term="Android，进阶之路" scheme="https://markfrank01.github.io/categories/Android%EF%BC%8C%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/"/>
+    
+    
+      <category term="Android，进阶之路" scheme="https://markfrank01.github.io/tags/Android%EF%BC%8C%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>行动指南</title>
