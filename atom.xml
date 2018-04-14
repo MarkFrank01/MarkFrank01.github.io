@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://markfrank01.github.io/"/>
-  <updated>2018-04-14T00:49:51.873Z</updated>
+  <updated>2018-04-14T14:32:30.685Z</updated>
   <id>https://markfrank01.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>四大组件之Service</title>
+    <link href="https://markfrank01.github.io/2018/01/02/Service/"/>
+    <id>https://markfrank01.github.io/2018/01/02/Service/</id>
+    <published>2018-01-02T11:45:33.000Z</published>
+    <updated>2018-04-14T14:32:30.685Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;##引言##&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;上篇我们学习了Activity的一些进阶知识，这篇我们来学习一下Service。它有哪难的呢，确实用起来不难，但是详细的追根揭底就会有一些概念不够清晰了，所以我们需要再去复习一下。&lt;/
+      
+    
+    </summary>
+    
+      <category term="Android，进阶之路" scheme="https://markfrank01.github.io/categories/Android%EF%BC%8C%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/"/>
+    
+    
+      <category term="Android，进阶之路" scheme="https://markfrank01.github.io/tags/Android%EF%BC%8C%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>四大组件之Activity</title>
     <link href="https://markfrank01.github.io/2018/01/01/Activity/"/>
     <id>https://markfrank01.github.io/2018/01/01/Activity/</id>
     <published>2018-01-01T14:15:32.000Z</published>
-    <updated>2018-04-14T00:49:51.873Z</updated>
+    <updated>2018-04-14T14:32:06.768Z</updated>
     
     <summary type="html">
     
@@ -105,9 +131,9 @@
     
       <category term="Android" scheme="https://markfrank01.github.io/tags/Android/"/>
     
-      <category term="网络" scheme="https://markfrank01.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
-    
       <category term="技术" scheme="https://markfrank01.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="网络" scheme="https://markfrank01.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
@@ -215,9 +241,9 @@
       <category term="技术" scheme="https://markfrank01.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="技术" scheme="https://markfrank01.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
-    
       <category term="开源" scheme="https://markfrank01.github.io/tags/%E5%BC%80%E6%BA%90/"/>
+    
+      <category term="技术" scheme="https://markfrank01.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
     
       <category term="js" scheme="https://markfrank01.github.io/tags/js/"/>
     

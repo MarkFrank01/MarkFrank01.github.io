@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://i.imgur.com/LNm9oeG.png">
 <meta property="og:image" content="https://i.imgur.com/ZBbInKt.png">
 <meta property="og:image" content="https://i.imgur.com/1EIyJUA.jpg">
-<meta property="og:updated_time" content="2018-04-14T00:49:51.873Z">
+<meta property="og:updated_time" content="2018-04-14T14:32:06.768Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="四大组件之Activity">
 <meta name="twitter:description" content="引言 开启一个新的系列目的一是为了整理和巩固基础的知识，3月底要进军企鹅，二是为了给后来者留下一个肩膀，我也曾经历过找不到好的资料的苦恼，希望现在我可以写出更好的文章，整理出更好的内容，分享给大家  这个系列我把它定义为进阶之路，需要有一定的知识进行积累。也将它直指面试。通过面对问题的思考带出知识的运用和理解。所以每篇文章将持续更新！ 问题思考： 一、Android的生命周期 二、Android">
@@ -276,11 +276,13 @@
 <p><strong>答</strong>：<br>从使用过程来说他们两对确实差不多，甚至可以只用一对，但他们两个配对的回调分别表示不同的意义，onStart和onStop是从是否可见的角度来回调的，而OnResume和OnPause是从Activity是否位于前台这个角度来回调的。</p>
 <p><strong>问</strong>：<br>假设当前Activity为A，如果这时用户打开一个新的ActivityB，那么B的onResume和A的onPause哪个先执行呢？</p>
 <p><strong>答</strong><br>A的onPause先调用，B的onResume再执行。原因的话在后面的工作原理会再次说明，这里先简单的说明结果。</p>
-<h3 id="学习小结"><a href="#学习小结" class="headerlink" title="学习小结"></a>学习小结</h3><p>通过这章你学会了什么？</p>
+<h3 id="学习小结"><a href="#学习小结" class="headerlink" title="学习小结"></a>学习小结</h3><p>通过这篇你学会了什么？</p>
 <p>1.Activity生命周期不同情况</p>
 <p>2.Activity的启动模式</p>
 <p>3.匹配规则</p>
 <p>4.一些面试题的思考</p>
+<p><strong>参考资料：Android开发艺术，Planet。</strong></p>
+<p>当然关于Activity的工作过程有会专门的一篇来整理，那么我们继续看下去吧~</p>
 <pre><code>1/1/2018 10:15:32 PM 第3次修改
 </code></pre>
         </div>
@@ -289,7 +291,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-04-14T00:49:51.873Z" itemprop="dateUpdated">2018-04-14 08:49:51</time>
+    最后更新时间：<time datetime="2018-04-14T14:32:06.768Z" itemprop="dateUpdated">2018-04-14 22:32:06</time>
 </span><br>
 
 
@@ -379,6 +381,13 @@
     </div>
   
 
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/01/02/Service/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">四大组件之Service</h4>
+      </a>
+    </div>
   
 </nav>
 
