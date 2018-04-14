@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://markfrank01.github.io/"/>
-  <updated>2018-04-14T14:32:30.685Z</updated>
+  <updated>2018-04-14T14:39:55.538Z</updated>
   <id>https://markfrank01.github.io/</id>
   
   <author>
@@ -21,16 +21,15 @@
     <link href="https://markfrank01.github.io/2018/01/02/Service/"/>
     <id>https://markfrank01.github.io/2018/01/02/Service/</id>
     <published>2018-01-02T11:45:33.000Z</published>
-    <updated>2018-04-14T14:32:30.685Z</updated>
+    <updated>2018-04-14T14:39:55.538Z</updated>
     
     <summary type="html">
     
       
       
         &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;##引言##&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;上篇我们学习了Activity的一些进阶知识，这篇我们来学习一下Service。它有哪难的呢，确实用起来不难，但是详细的追根揭底就会有一些概念不够清晰了，所以我们需要再去复习一下。&lt;/
+&lt;h2 id=&quot;引言&quot;&gt;&lt;a href=&quot;#引言&quot; class=&quot;headerlink&quot; title=&quot;引言&quot;&gt;&lt;/a&gt;引言&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;上篇我们学习了Activity的一些进阶知识，这篇我们来学习一下Service
       
     
     </summary>
@@ -131,9 +130,9 @@
     
       <category term="Android" scheme="https://markfrank01.github.io/tags/Android/"/>
     
-      <category term="技术" scheme="https://markfrank01.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
-    
       <category term="网络" scheme="https://markfrank01.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+      <category term="技术" scheme="https://markfrank01.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
@@ -241,9 +240,9 @@
       <category term="技术" scheme="https://markfrank01.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="开源" scheme="https://markfrank01.github.io/tags/%E5%BC%80%E6%BA%90/"/>
-    
       <category term="技术" scheme="https://markfrank01.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="开源" scheme="https://markfrank01.github.io/tags/%E5%BC%80%E6%BA%90/"/>
     
       <category term="js" scheme="https://markfrank01.github.io/tags/js/"/>
     
