@@ -20,17 +20,17 @@
     
     
     <meta name="keywords" content="Android,进阶之路,学习笔记">
-    <meta name="description" content="引言 上篇我们了解和补充学习了BroadcastReceive，现在我们来继续往下走，这篇我们来重新补充学习一下ContentProvider。  清晰理解ContentProvider: 一、ContentProvider是什么 二、Binder的原理 三、ContentProvider的一些问题 一、ContentProvider是什么ContentProvider是Android中提供的专">
+    <meta name="description" content="ContentProvider的回顾">
 <meta name="keywords" content="Android,进阶之路,学习笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="四大组件之ContentProvider">
 <meta property="og:url" content="https://markfrank01.github.io/2018/01/05/ContentProvider/index.html">
 <meta property="og:site_name" content="Five">
-<meta property="og:description" content="引言 上篇我们了解和补充学习了BroadcastReceive，现在我们来继续往下走，这篇我们来重新补充学习一下ContentProvider。  清晰理解ContentProvider: 一、ContentProvider是什么 二、Binder的原理 三、ContentProvider的一些问题 一、ContentProvider是什么ContentProvider是Android中提供的专">
-<meta property="og:updated_time" content="2018-04-16T07:05:31.484Z">
+<meta property="og:description" content="ContentProvider的回顾">
+<meta property="og:updated_time" content="2018-04-16T07:10:16.328Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="四大组件之ContentProvider">
-<meta name="twitter:description" content="引言 上篇我们了解和补充学习了BroadcastReceive，现在我们来继续往下走，这篇我们来重新补充学习一下ContentProvider。  清晰理解ContentProvider: 一、ContentProvider是什么 二、Binder的原理 三、ContentProvider的一些问题 一、ContentProvider是什么ContentProvider是Android中提供的专">
+<meta name="twitter:description" content="ContentProvider的回顾">
     
         <link rel="alternate" type="application/atom+xml" title="Five" href="/atom.xml">
     
@@ -183,7 +183,7 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <a id="more"></a>
+            <p>ContentProvider的回顾<br><a id="more"></a></p>
 <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><blockquote>
 <p>上篇我们了解和补充学习了BroadcastReceive，现在我们来继续往下走，这篇我们来重新补充学习一下ContentProvider。</p>
 </blockquote>
@@ -223,7 +223,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-04-16T07:05:31.484Z" itemprop="dateUpdated">2018-04-16 15:05:31</time>
+    最后更新时间：<time datetime="2018-04-16T07:10:16.328Z" itemprop="dateUpdated">2018-04-16 15:10:16</time>
 </span><br>
 
 
@@ -268,7 +268,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://markfrank01.github.io/2018/01/05/ContentProvider/&title=《四大组件之ContentProvider》 — Five&source=我挥舞着键盘和本子，发誓要把世界写个明明白白" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://markfrank01.github.io/2018/01/05/ContentProvider/&title=《四大组件之ContentProvider》 — Five&source=ContentProvider的回顾" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -411,7 +411,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://markfrank01.github.io/2018/01/05/ContentProvider/&title=《四大组件之ContentProvider》 — Five&source=我挥舞着键盘和本子，发誓要把世界写个明明白白" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://markfrank01.github.io/2018/01/05/ContentProvider/&title=《四大组件之ContentProvider》 — Five&source=ContentProvider的回顾" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
