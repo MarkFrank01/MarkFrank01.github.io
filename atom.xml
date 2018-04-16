@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://markfrank01.github.io/"/>
-  <updated>2018-04-16T05:56:57.663Z</updated>
+  <updated>2018-04-16T06:05:07.252Z</updated>
   <id>https://markfrank01.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://markfrank01.github.io/2018/01/03/BroadcastReceiver/"/>
     <id>https://markfrank01.github.io/2018/01/03/BroadcastReceiver/</id>
     <published>2018-01-03T12:03:11.000Z</published>
-    <updated>2018-04-16T05:56:57.663Z</updated>
+    <updated>2018-04-16T06:05:07.252Z</updated>
     
     <summary type="html">
     
@@ -34,10 +34,16 @@
     
     </summary>
     
-      <category term="Android，进阶之路" scheme="https://markfrank01.github.io/categories/Android%EF%BC%8C%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/"/>
+      <category term="Android" scheme="https://markfrank01.github.io/categories/Android/"/>
+    
+      <category term="进阶之路" scheme="https://markfrank01.github.io/categories/Android/%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="Android，进阶之路，学习笔记" scheme="https://markfrank01.github.io/tags/Android%EF%BC%8C%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF%EF%BC%8C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="Android" scheme="https://markfrank01.github.io/tags/Android/"/>
+    
+      <category term="进阶之路" scheme="https://markfrank01.github.io/tags/%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/"/>
+    
+      <category term="学习笔记" scheme="https://markfrank01.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -46,7 +52,7 @@
     <link href="https://markfrank01.github.io/2018/01/02/Service/"/>
     <id>https://markfrank01.github.io/2018/01/02/Service/</id>
     <published>2018-01-02T11:45:33.000Z</published>
-    <updated>2018-04-16T05:50:57.083Z</updated>
+    <updated>2018-04-16T06:05:21.690Z</updated>
     
     <summary type="html">
     
@@ -59,10 +65,16 @@
     
     </summary>
     
-      <category term="Android，进阶之路" scheme="https://markfrank01.github.io/categories/Android%EF%BC%8C%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/"/>
+      <category term="Android" scheme="https://markfrank01.github.io/categories/Android/"/>
+    
+      <category term="进阶之路" scheme="https://markfrank01.github.io/categories/Android/%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="Android，进阶之路" scheme="https://markfrank01.github.io/tags/Android%EF%BC%8C%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/"/>
+      <category term="Android" scheme="https://markfrank01.github.io/tags/Android/"/>
+    
+      <category term="进阶之路" scheme="https://markfrank01.github.io/tags/%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/"/>
+    
+      <category term="学习笔记" scheme="https://markfrank01.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -71,7 +83,7 @@
     <link href="https://markfrank01.github.io/2018/01/01/Activity/"/>
     <id>https://markfrank01.github.io/2018/01/01/Activity/</id>
     <published>2018-01-01T14:15:32.000Z</published>
-    <updated>2018-04-14T14:32:06.768Z</updated>
+    <updated>2018-04-16T06:05:13.767Z</updated>
     
     <summary type="html">
     
@@ -84,10 +96,16 @@
     
     </summary>
     
-      <category term="Android，进阶之路" scheme="https://markfrank01.github.io/categories/Android%EF%BC%8C%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/"/>
+      <category term="Android" scheme="https://markfrank01.github.io/categories/Android/"/>
+    
+      <category term="进阶之路" scheme="https://markfrank01.github.io/categories/Android/%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="Android，进阶之路" scheme="https://markfrank01.github.io/tags/Android%EF%BC%8C%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/"/>
+      <category term="Android" scheme="https://markfrank01.github.io/tags/Android/"/>
+    
+      <category term="进阶之路" scheme="https://markfrank01.github.io/tags/%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/"/>
+    
+      <category term="学习笔记" scheme="https://markfrank01.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
