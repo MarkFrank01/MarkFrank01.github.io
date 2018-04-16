@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://markfrank01.github.io/"/>
-  <updated>2018-04-16T06:09:59.215Z</updated>
+  <updated>2018-04-16T07:05:31.484Z</updated>
   <id>https://markfrank01.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>四大组件之ContentProvider</title>
+    <link href="https://markfrank01.github.io/2018/01/05/ContentProvider/"/>
+    <id>https://markfrank01.github.io/2018/01/05/ContentProvider/</id>
+    <published>2018-01-05T02:33:24.000Z</published>
+    <updated>2018-04-16T07:05:31.484Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;引言&quot;&gt;&lt;a href=&quot;#引言&quot; class=&quot;headerlink&quot; title=&quot;引言&quot;&gt;&lt;/a&gt;引言&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;上篇我们了解和补充学习了BroadcastReceive，现在我们来继续往下走
+      
+    
+    </summary>
+    
+      <category term="Android" scheme="https://markfrank01.github.io/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="https://markfrank01.github.io/tags/Android/"/>
+    
+      <category term="进阶之路" scheme="https://markfrank01.github.io/tags/%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/"/>
+    
+      <category term="学习笔记" scheme="https://markfrank01.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>四大组件之BroadcastReceiver</title>
@@ -279,9 +308,9 @@
     
       <category term="技术" scheme="https://markfrank01.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
     
-      <category term="js" scheme="https://markfrank01.github.io/tags/js/"/>
-    
       <category term="开源" scheme="https://markfrank01.github.io/tags/%E5%BC%80%E6%BA%90/"/>
+    
+      <category term="js" scheme="https://markfrank01.github.io/tags/js/"/>
     
       <category term="html" scheme="https://markfrank01.github.io/tags/html/"/>
     
