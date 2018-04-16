@@ -20,18 +20,18 @@
     
     
     <meta name="keywords" content="Android，进阶之路">
-    <meta name="description" content="引言 上篇我们学习了Activity的一些进阶知识，这篇我们来学习一下Service。它有哪难的呢，确实用起来不难，但是详细的追根揭底就会有一些概念不够清晰了，所以我们需要再去复习一下。  清晰理解Service。 问题思考： 一.Service是什么？ 二、Service的start和bind状态有什么区别？ 三、同一个Service，先startService，然后再bindService，">
+    <meta name="description" content="引言 上篇我们学习了Activity的一些进阶知识，这篇我们来学习一下Service。它有哪难的呢，确实用起来不难，但是详细的追根揭底就会有一些概念不够清晰了，所以我们需要再去复习一下。  清晰理解Service。 问题思考： 一.Service是什么 二、Service的start和bind状态有什么区别？ 三、同一个Service，先startService，然后再bindService，如">
 <meta name="keywords" content="Android，进阶之路">
 <meta property="og:type" content="article">
 <meta property="og:title" content="四大组件之Service">
 <meta property="og:url" content="https://markfrank01.github.io/2018/01/02/Service/index.html">
 <meta property="og:site_name" content="Five">
-<meta property="og:description" content="引言 上篇我们学习了Activity的一些进阶知识，这篇我们来学习一下Service。它有哪难的呢，确实用起来不难，但是详细的追根揭底就会有一些概念不够清晰了，所以我们需要再去复习一下。  清晰理解Service。 问题思考： 一.Service是什么？ 二、Service的start和bind状态有什么区别？ 三、同一个Service，先startService，然后再bindService，">
+<meta property="og:description" content="引言 上篇我们学习了Activity的一些进阶知识，这篇我们来学习一下Service。它有哪难的呢，确实用起来不难，但是详细的追根揭底就会有一些概念不够清晰了，所以我们需要再去复习一下。  清晰理解Service。 问题思考： 一.Service是什么 二、Service的start和bind状态有什么区别？ 三、同一个Service，先startService，然后再bindService，如">
 <meta property="og:image" content="https://i.imgur.com/X7gm4EQ.jpg">
-<meta property="og:updated_time" content="2018-04-14T14:39:55.538Z">
+<meta property="og:updated_time" content="2018-04-16T05:50:57.083Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="四大组件之Service">
-<meta name="twitter:description" content="引言 上篇我们学习了Activity的一些进阶知识，这篇我们来学习一下Service。它有哪难的呢，确实用起来不难，但是详细的追根揭底就会有一些概念不够清晰了，所以我们需要再去复习一下。  清晰理解Service。 问题思考： 一.Service是什么？ 二、Service的start和bind状态有什么区别？ 三、同一个Service，先startService，然后再bindService，">
+<meta name="twitter:description" content="引言 上篇我们学习了Activity的一些进阶知识，这篇我们来学习一下Service。它有哪难的呢，确实用起来不难，但是详细的追根揭底就会有一些概念不够清晰了，所以我们需要再去复习一下。  清晰理解Service。 问题思考： 一.Service是什么 二、Service的start和bind状态有什么区别？ 三、同一个Service，先startService，然后再bindService，如">
 <meta name="twitter:image" content="https://i.imgur.com/X7gm4EQ.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="Five" href="/atom.xml">
@@ -191,12 +191,15 @@
 </blockquote>
 <p>清晰理解Service。</p>
 <p>问题思考：</p>
-<p><strong>一.Service是什么？</strong></p>
+<p><strong>一.Service是什么</strong></p>
 <p><strong>二、Service的start和bind状态有什么区别？</strong></p>
 <p><strong>三、同一个Service，先startService，然后再bindService，如何把它停止掉？</strong></p>
 <p><strong>四、你有注意到Service的onStartCommand方法的返回值吗？不同返回值有什么区别？</strong></p>
 <p><strong>五、Service的生命周期方法onCreate、onStart、onBind等运行在哪个线程？</strong></p>
-<h3 id="一-Service是什么？"><a href="#一-Service是什么？" class="headerlink" title="一.Service是什么？"></a>一.Service是什么？</h3><p>这个问题很多人觉得不应该放在这里，但是通过我问周边的一些同事，发现还真没几个人能完全的答对。那么Service究竟是什么呢？Service是Android中现实程序后台运行的解决方案，它非常适合去处理那些不需要交互但是需要长时间运行的任务。Service的运行不依赖于任何的用户界面，即使程序被切换到后台或者打开另外的应用，它仍然可以正常运行。</p>
+<h3 id="一-Service是什么？"><a href="#一-Service是什么？" class="headerlink" title="一.Service是什么？"></a>一.Service是什么？</h3><p>这个问题很多人觉得不应该放在这里，但是通过我问周边的一些同事，发现还真没几个人能完全的答对。那么Service究竟是什么呢？</p>
+<blockquote>
+<p>Service是Android中现实程序后台运行的解决方案，它非常适合去处理那些不需要交互但是需要长时间运行的任务。Service的运行不依赖于任何的用户界面，即使程序被切换到后台或者打开另外的应用，它仍然可以正常运行。</p>
+</blockquote>
 <h3 id="二、Service的start和bind状态有什么区别？"><a href="#二、Service的start和bind状态有什么区别？" class="headerlink" title="二、Service的start和bind状态有什么区别？"></a>二、Service的start和bind状态有什么区别？</h3><p>start启动的Service，Service有独立的生命周期，不依赖该组件。<br>多次调用start方法，会重复调用onStartCommand方法；<br>且start启动的Service，必须通过stopService或者stopSelf来停止service(IntentService会自动调用stopSelf方法)。</p>
 <p>多次调用bind方法，只会调用一次onBind方法。<br>bind绑定的Service,Service依赖于这些组件，这些组件全部销毁后，Service也会被销毁</p>
 <h3 id="三、同一个Service，先startService，然后再bindService，如何把它停止掉？"><a href="#三、同一个Service，先startService，然后再bindService，如何把它停止掉？" class="headerlink" title="三、同一个Service，先startService，然后再bindService，如何把它停止掉？"></a>三、同一个Service，先startService，然后再bindService，如何把它停止掉？</h3><p>不管被startService调用几次，只需要stopService一次</p>
@@ -215,7 +218,7 @@
 <p>2.清晰的理解了Service</p>
 <p>3.对于Service的生命周期和它的操作重新进行了学习</p>
 <p><strong>参考资料：Android开发艺术，Planet。</strong></p>
-<pre><code>1/1/2018 10:15:32 PM 第3次修改
+<pre><code>1/3/2018 10:15:32 PM 第3次修改
 </code></pre>
         </div>
 
@@ -223,7 +226,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-04-14T14:39:55.538Z" itemprop="dateUpdated">2018-04-14 22:39:55</time>
+    最后更新时间：<time datetime="2018-04-16T05:50:57.083Z" itemprop="dateUpdated">2018-04-16 13:50:57</time>
 </span><br>
 
 
@@ -313,6 +316,13 @@
     </div>
   
 
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/01/03/BoradcastReceiver/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">四大组件之BroadcastReceiver</h4>
+      </a>
+    </div>
   
 </nav>
 
