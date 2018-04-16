@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://markfrank01.github.io/"/>
-  <updated>2018-04-16T06:05:07.252Z</updated>
+  <updated>2018-04-16T06:09:59.215Z</updated>
   <id>https://markfrank01.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://markfrank01.github.io/2018/01/03/BroadcastReceiver/"/>
     <id>https://markfrank01.github.io/2018/01/03/BroadcastReceiver/</id>
     <published>2018-01-03T12:03:11.000Z</published>
-    <updated>2018-04-16T06:05:07.252Z</updated>
+    <updated>2018-04-16T06:09:59.215Z</updated>
     
     <summary type="html">
     
@@ -35,8 +35,6 @@
     </summary>
     
       <category term="Android" scheme="https://markfrank01.github.io/categories/Android/"/>
-    
-      <category term="进阶之路" scheme="https://markfrank01.github.io/categories/Android/%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/"/>
     
     
       <category term="Android" scheme="https://markfrank01.github.io/tags/Android/"/>
@@ -52,7 +50,7 @@
     <link href="https://markfrank01.github.io/2018/01/02/Service/"/>
     <id>https://markfrank01.github.io/2018/01/02/Service/</id>
     <published>2018-01-02T11:45:33.000Z</published>
-    <updated>2018-04-16T06:05:21.690Z</updated>
+    <updated>2018-04-16T06:09:51.913Z</updated>
     
     <summary type="html">
     
@@ -66,8 +64,6 @@
     </summary>
     
       <category term="Android" scheme="https://markfrank01.github.io/categories/Android/"/>
-    
-      <category term="进阶之路" scheme="https://markfrank01.github.io/categories/Android/%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/"/>
     
     
       <category term="Android" scheme="https://markfrank01.github.io/tags/Android/"/>
@@ -83,7 +79,7 @@
     <link href="https://markfrank01.github.io/2018/01/01/Activity/"/>
     <id>https://markfrank01.github.io/2018/01/01/Activity/</id>
     <published>2018-01-01T14:15:32.000Z</published>
-    <updated>2018-04-16T06:05:13.767Z</updated>
+    <updated>2018-04-16T06:09:45.093Z</updated>
     
     <summary type="html">
     
@@ -97,8 +93,6 @@
     </summary>
     
       <category term="Android" scheme="https://markfrank01.github.io/categories/Android/"/>
-    
-      <category term="进阶之路" scheme="https://markfrank01.github.io/categories/Android/%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/"/>
     
     
       <category term="Android" scheme="https://markfrank01.github.io/tags/Android/"/>
@@ -285,9 +279,9 @@
     
       <category term="技术" scheme="https://markfrank01.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
     
-      <category term="开源" scheme="https://markfrank01.github.io/tags/%E5%BC%80%E6%BA%90/"/>
-    
       <category term="js" scheme="https://markfrank01.github.io/tags/js/"/>
+    
+      <category term="开源" scheme="https://markfrank01.github.io/tags/%E5%BC%80%E6%BA%90/"/>
     
       <category term="html" scheme="https://markfrank01.github.io/tags/html/"/>
     
