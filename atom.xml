@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://markfrank01.github.io/"/>
-  <updated>2018-04-16T07:10:16.328Z</updated>
+  <updated>2018-06-10T06:17:39.332Z</updated>
   <id>https://markfrank01.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Todo-mvp</title>
+    <link href="https://markfrank01.github.io/2018/06/07/mvp/"/>
+    <id>https://markfrank01.github.io/2018/06/07/mvp/</id>
+    <published>2018-06-07T13:13:32.000Z</published>
+    <updated>2018-06-10T06:17:39.332Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;让我一起来看看官方的todp-mvp&lt;/p&gt;
+&lt;p&gt;列表与详情&lt;br&gt;&lt;figure class=&quot;image-bubble&quot;&gt;
+                &lt;div class=&quot;img-lightbox&quot;&gt;
+           
+      
+    
+    </summary>
+    
+      <category term="Android" scheme="https://markfrank01.github.io/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="https://markfrank01.github.io/tags/Android/"/>
+    
+  </entry>
   
   <entry>
     <title>四大组件之ContentProvider</title>
@@ -286,11 +313,11 @@
       <category term="技术" scheme="https://markfrank01.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="开源" scheme="https://markfrank01.github.io/tags/%E5%BC%80%E6%BA%90/"/>
-    
       <category term="技术" scheme="https://markfrank01.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
     
       <category term="js" scheme="https://markfrank01.github.io/tags/js/"/>
+    
+      <category term="开源" scheme="https://markfrank01.github.io/tags/%E5%BC%80%E6%BA%90/"/>
     
       <category term="html" scheme="https://markfrank01.github.io/tags/html/"/>
     
