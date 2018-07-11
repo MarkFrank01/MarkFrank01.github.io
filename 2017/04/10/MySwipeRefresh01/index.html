@@ -29,7 +29,7 @@
 <meta property="og:description" content="打造属于自己的刷新框架！">
 <meta property="og:image" content="https://markfrank01.github.io/img/自定义刷新加载框架1/fresh.jpg">
 <meta property="og:image" content="https://markfrank01.github.io/img/自定义刷新加载框架1/load.jpg">
-<meta property="og:updated_time" content="2017-04-11T02:26:29.276Z">
+<meta property="og:updated_time" content="2018-07-11T14:54:02.442Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="打造自定义刷新加载框架(一)">
 <meta name="twitter:description" content="打造属于自己的刷新框架！">
@@ -161,7 +161,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第一篇-自定义刷新加载框架（一）"><span class="post-toc-number">1.</span> <span class="post-toc-text">第一篇  自定义刷新加载框架（一）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#我们需要做什么"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">我们需要做什么</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第二篇为大家分析一些优秀的滑动加载框架和通用适配，敬请期待哦"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">第二篇为大家分析一些优秀的滑动加载框架和通用适配，敬请期待哦</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第一篇-自定义刷新加载框架（一）"><span class="post-toc-number">1.</span> <span class="post-toc-text">第一篇  自定义刷新加载框架（一）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#我们需要做什么"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">我们需要做什么</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第二篇将和大家分析并且手把手做，敬请期待哦"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">第二篇将和大家分析并且手把手做，敬请期待哦</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
@@ -222,8 +222,15 @@ public void addFooterView(View footerView, int footerHeight) {
     this.footerLayout.addView(footerView);
     this.footerLayout.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, footerHeight));
 }
-</code></pre><p>既然都重写了nestedscrolling那么我们也顺便重写一下recyclerView<br>    private class MyRecyclerView extends RecyclerView {<br>        private StaggeredGridLayoutManager staggeredGridLayoutManager = null;<br>        private LinearLayoutManager linearLayoutManager = null;<br>        private GridLayoutManager gridLayoutManager = null;<br>        private boolean isScrollLoad = false;<br>        private boolean isScrollRefresh = false;</p>
-<pre><code>    public MyRecyclerView(Context context) {
+</code></pre><p>既然都重写了nestedscrolling那么我们也顺便重写一下recyclerView</p>
+<pre><code>private class MyRecyclerView extends RecyclerView {
+    private StaggeredGridLayoutManager staggeredGridLayoutManager = null;
+    private LinearLayoutManager linearLayoutManager = null;
+    private GridLayoutManager gridLayoutManager = null;
+    private boolean isScrollLoad = false;
+    private boolean isScrollRefresh = false;
+
+    public MyRecyclerView(Context context) {
         super(context);
         setVerticalFadingEdgeEnabled(false);
         setHorizontalFadingEdgeEnabled(false);
@@ -277,15 +284,20 @@ public void addFooterView(View footerView, int footerHeight) {
     }
 }
 </code></pre><p>这样我们就可以自己使用自己的刷新框架啦。<a href="https://github.com/MarkFrank01/CollectUIView" title="MySwipeRefresh01" target="_blank" rel="external">具体详见github的MySwipeRefresh01</a></p>
-<p></p><p>有两点需要注意的：第一个就是加载和刷新的view,这两个是可以自己重写动画定制自己想要的view，目前我仅仅是添加了两个文字提示。第二个就是还可以根据需要添加如滑动阻尼，这里暂时还没有加入。</p><p></p>
-<h3 id="第二篇为大家分析一些优秀的滑动加载框架和通用适配，敬请期待哦"><a href="#第二篇为大家分析一些优秀的滑动加载框架和通用适配，敬请期待哦" class="headerlink" title="第二篇为大家分析一些优秀的滑动加载框架和通用适配，敬请期待哦"></a>第二篇为大家分析一些优秀的滑动加载框架和通用适配，敬请期待哦</h3>
+<p>有两点需要注意的：第一个就是加载和刷新的view,这两个是可以自己重写动画定制自己想要的view，目前我仅仅是添加了两个文字提示。第二个就是还可以根据需要添加如滑动阻尼，这里暂时还没有加入。</p>
+
+<blockquote>
+<p>接下来我们需要自己去做一个能够用于实际工作中的SwipRefresh。</p>
+</blockquote>
+<h3 id="第二篇将和大家分析并且手把手做，敬请期待哦"><a href="#第二篇将和大家分析并且手把手做，敬请期待哦" class="headerlink" title="第二篇将和大家分析并且手把手做，敬请期待哦"></a>第二篇将和大家分析并且手把手做，敬请期待哦</h3><pre><code>5/11/2017 12:19:44 PM 第4次修改
+</code></pre>
         </div>
 
         <blockquote class="post-copyright">
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-04-11T02:26:29.276Z" itemprop="dateUpdated">2017-04-11 10:26:29</time>
+    最后更新时间：<time datetime="2018-07-11T14:54:02.442Z" itemprop="dateUpdated">2018-07-11 22:54:02</time>
 </span><br>
 
 
