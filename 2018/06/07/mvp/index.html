@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://i.imgur.com/0tmf37N.png">
 <meta property="og:image" content="https://i.imgur.com/6pbhlSu.png">
 <meta property="og:image" content="https://i.imgur.com/r7GoDdn.png">
-<meta property="og:updated_time" content="2018-06-10T06:25:03.445Z">
+<meta property="og:updated_time" content="2018-07-22T10:41:50.228Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Todo-mvp">
 <meta name="twitter:description" content="让我们一起来看看官方的todp-mvp">
@@ -277,8 +277,48 @@ public TaskDetailPresenter(@Nullable String taskId,
     // 使View（TaskDetailFragment）也保持对自身（TaskDetailPresenter）的引用
     mTaskDetailView.setPresenter(this);
 }
-</code></pre><p><strong>4</strong>、Model层。<br>该项目中Model层最大的特点是被赋予了数据获取的职责，与我们平常Model层只定义实体对象截然不同。实例中，数据的获取、存储、数据状态变化都是Model层的任务，Presenter会根据需要调用该层的数据处理逻辑并在需要时将回调传入。<br>我们来看TaskDetailPresenter 的 start() 方法：<br>    @Override<br>    public void start() {<br>        openTask();<br>    }<br>    private void openTask() {<br>        // 判空处理<br>        if (null == mTaskId || mTaskId.isEmpty()) {<br>            mTaskDetailView.showMissingTask();<br>            return;<br>        }<br>        // 更新状态<br>        mTaskDetailView.setLoadingIndicator(true);<br>        // 获取该条Task数据<br>        mTasksRepository.getTask(mTaskId, new TasksDataSource.GetTaskCallback() {<br>            @Override<br>            public void onTaskLoaded(Task task) {<br>                // The view may not be able to handle UI updates anymore<br>                // View已经被用户回退<br>                if (!mTaskDetailView.isActive()) {<br>                    return;<br>                }<br>                // 获取到task数据，并更新UI<br>                mTaskDetailView.setLoadingIndicator(false);<br>                if (null == task) {<br>                    mTaskDetailView.showMissingTask();<br>                } else {<br>                    showTask(task);<br>                }<br>            }<br>            @Override<br>            public void onDataNotAvailable() {<br>                // The view may not be able to handle UI updates anymore<br>                // 显示数据获取失败时的状态<br>                if (!mTaskDetailView.isActive()) {<br>                    return;<br>                }<br>                mTaskDetailView.showMissingTask();<br>            }<br>        });<br>    }</p>
-<p>我们接着看 TasksRepository 中的getTask() 方法，</p>
+</code></pre><p><strong>4</strong>、Model层。<br>该项目中Model层最大的特点是被赋予了数据获取的职责，与我们平常Model层只定义实体对象截然不同。实例中，数据的获取、存储、数据状态变化都是Model层的任务，Presenter会根据需要调用该层的数据处理逻辑并在需要时将回调传入。<br>我们来看TaskDetailPresenter 的 start() 方法：</p>
+<pre><code>@Override
+public void start() {
+    openTask();
+}
+private void openTask() {
+    // 判空处理
+    if (null == mTaskId || mTaskId.isEmpty()) {
+        mTaskDetailView.showMissingTask();
+        return;
+    }
+    // 更新状态
+    mTaskDetailView.setLoadingIndicator(true);
+    // 获取该条Task数据
+    mTasksRepository.getTask(mTaskId, new TasksDataSource.GetTaskCallback() {
+        @Override
+        public void onTaskLoaded(Task task) {
+            // The view may not be able to handle UI updates anymore
+            // View已经被用户回退
+            if (!mTaskDetailView.isActive()) {
+                return;
+            }
+            // 获取到task数据，并更新UI
+            mTaskDetailView.setLoadingIndicator(false);
+            if (null == task) {
+                mTaskDetailView.showMissingTask();
+            } else {
+                showTask(task);
+            }
+        }
+        @Override
+        public void onDataNotAvailable() {
+            // The view may not be able to handle UI updates anymore
+            // 显示数据获取失败时的状态
+            if (!mTaskDetailView.isActive()) {
+                return;
+            }
+            mTaskDetailView.showMissingTask();
+        }
+    });
+}
+</code></pre><p>我们接着看 TasksRepository 中的getTask() 方法，</p>
 <pre><code>@Override
 public void getTask(@NonNull final String taskId, @NonNull final GetTaskCallback callback) {
     // 判空处理
@@ -382,7 +422,7 @@ void deleteTask(@NonNull String taskId);
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-06-10T06:25:03.445Z" itemprop="dateUpdated">2018-06-10 14:25:03</time>
+    最后更新时间：<time datetime="2018-07-22T10:41:50.228Z" itemprop="dateUpdated">2018-07-22 18:41:50</time>
 </span><br>
 
 

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://markfrank01.github.io/"/>
-  <updated>2018-06-10T06:25:03.445Z</updated>
+  <updated>2018-07-22T10:41:50.228Z</updated>
   <id>https://markfrank01.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://markfrank01.github.io/2018/06/07/mvp/"/>
     <id>https://markfrank01.github.io/2018/06/07/mvp/</id>
     <published>2018-06-07T13:13:32.000Z</published>
-    <updated>2018-06-10T06:25:03.445Z</updated>
+    <updated>2018-07-22T10:41:50.228Z</updated>
     
     <summary type="html">
     
@@ -308,9 +308,9 @@
     
       <category term="技术" scheme="https://markfrank01.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
     
-      <category term="开源" scheme="https://markfrank01.github.io/tags/%E5%BC%80%E6%BA%90/"/>
-    
       <category term="js" scheme="https://markfrank01.github.io/tags/js/"/>
+    
+      <category term="开源" scheme="https://markfrank01.github.io/tags/%E5%BC%80%E6%BA%90/"/>
     
       <category term="html" scheme="https://markfrank01.github.io/tags/html/"/>
     
