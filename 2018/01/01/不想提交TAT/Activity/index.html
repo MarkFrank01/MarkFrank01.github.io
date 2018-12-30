@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>四大组件之Activity | Five | Enjoy Code</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Android,进阶之路,学习笔记">
+    <meta name="description" content="Activity的回顾">
+<meta name="keywords" content="Android,进阶之路,学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="四大组件之Activity">
+<meta property="og:url" content="https://markfrank01.github.io/2018/01/01/不想提交TAT/Activity/index.html">
+<meta property="og:site_name" content="Five">
+<meta property="og:description" content="Activity的回顾">
+<meta property="og:image" content="https://i.imgur.com/LNm9oeG.png">
+<meta property="og:image" content="https://i.imgur.com/ZBbInKt.png">
+<meta property="og:image" content="https://i.imgur.com/1EIyJUA.jpg">
+<meta property="og:updated_time" content="2018-04-16T07:10:02.233Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="四大组件之Activity">
+<meta name="twitter:description" content="Activity的回顾">
+<meta name="twitter:image" content="https://i.imgur.com/LNm9oeG.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Five" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/cat.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">嘉晨</h5>
+          <a href="mailto:1123212438@qq.com" title="1123212438@qq.com" class="mail">1123212438@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/MarkFrank01" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">四大组件之Activity</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">四大组件之Activity</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-01-01T14:15:32.000Z" itemprop="datePublished" class="page-time">
+  2018-01-01
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#引言"><span class="post-toc-number">1.</span> <span class="post-toc-text">引言</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、Activity的生命周期全面分析"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">一、Activity的生命周期全面分析</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、Activity的启动模式"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">二、Activity的启动模式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、IntentFilter的匹配规则"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">三、IntentFilter的匹配规则</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四、一些问题补充："><span class="post-toc-number">1.4.</span> <span class="post-toc-text">四、一些问题补充：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#学习小结"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">学习小结</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-不想提交TAT/Activity"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">四大组件之Activity</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-01-01 22:15:32" datetime="2018-01-01T14:15:32.000Z"  itemprop="datePublished">2018-01-01</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>Activity的回顾<br><a id="more"></a></p>
+<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><blockquote>
+<p>开启一个新的系列目的一是为了整理和巩固基础的知识，3月底要进军企鹅，二是为了给后来者留下一个肩膀，我也曾经历过找不到好的资料的苦恼，希望现在我可以写出更好的文章，整理出更好的内容，分享给大家</p>
+</blockquote>
+<p>这个系列我把它定义为进阶之路，需要有一定的知识进行积累。也将它直指面试。通过面对问题的思考带出知识的运用和理解。所以每篇文章将持续更新！</p>
+<p>问题思考：</p>
+<p><strong>一、Android的生命周期</strong></p>
+<p><strong>二、Android的启动模式</strong></p>
+<p><strong>三、IntentFilter的匹配规则</strong></p>
+<h3 id="一、Activity的生命周期全面分析"><a href="#一、Activity的生命周期全面分析" class="headerlink" title="一、Activity的生命周期全面分析"></a>一、Activity的生命周期全面分析</h3><p>分为两部分，一是典型情况下的生命周期，另一部分是异常情况下的生命周期</p>
+<p><strong>典型情况下的生命周期分析</strong><br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.imgur.com/LNm9oeG.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<p>通过此图附加说明一下几种不同的情况:</p>
+<pre><code>（1）针对一个特定的Activity,第一次启动。回调如下：onCreat - &gt; onStart - &gt; onResume
+
+（2）当用户打开新的Activity或者切换到桌面的时候。回调如下：onPause - &gt; onStop。特殊情况如果Activity采用了透明的主题，则不会发生OnStop回调
+
+（3）当用户再次回到原Activity时，回调如下：onRestart - &gt; onStart - &gt; onResume
+
+（4）当用户按back键返回时，回调如下：onPause-&gt; onStop - &gt; onDestory
+
+（5）当Activity被系统回收后再次打开，生命周期和（1）一样，但不是所有过程都一样
+</code></pre><p>异常情况下的生命周期分析</p>
+<p>1.资源相关的系统配置发生改变导致Activity被杀死并重新创建</p>
+<p>异常情况下Activity的重建过程<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.imgur.com/ZBbInKt.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<p>2.资源内存不足导致低优先级的Activity被杀死</p>
+<p>简单描述一下优先级</p>
+<ol>
+<li>前台Activity——正在和用户交互的Activity，优先级最高。</li>
+<li>可见但是非前台的Activity—–比如Activity中的对话框，虽然可见但是位于后台无法和用户直接交互。</li>
+<li>后台Activity—已经被暂停的Activity，比如执行了onStop，优先级最低</li>
+</ol>
+<h3 id="二、Activity的启动模式"><a href="#二、Activity的启动模式" class="headerlink" title="二、Activity的启动模式"></a>二、Activity的启动模式</h3><ul>
+<li><strong>standard ： 标准模式</strong></li>
+</ul>
+<blockquote>
+<p> 系统的默认模式。一种多实例模式。每次启动一个Activity都会重新创建一个新的实例。被启动的Activity会被放入启动者的栈中，如果启动者是除Activit之外的Context，这时由于没任务栈所以报错，此时需要指定<code>FLAG_ACTOVITY_NEW_TASK</code>标记位，这样启动的时候就会为它创建一个新的任务栈，且这时候启动它实际上是以singleTask模式启动的。</p>
+</blockquote>
+<ul>
+<li><strong>singleTop ：栈顶复用模式</strong></li>
+</ul>
+<blockquote>
+<p> 如果一个Activity的实例已经在栈顶存在，启动这个Activity时，并不会创建新的Activity，而会回调<code>onNewIntent()</code>。如果不是在栈顶存在，则会创建一个新的实例。</p>
+</blockquote>
+<p>例如多个Activity如ABCD，若D为栈顶，当它为singleTop模式时，栈里仍为ABCD。<br>，而如果为默认的standard模式时就会变成ABCDD。</p>
+<p>适合接收通知启动的内容显示页面，当收到多条新闻推送时，用于展示新闻的Activity设置成此模式，根据传来的intent数据显示不同的新闻信息，不会启动多个Activity</p>
+<ul>
+<li><strong>singleTask：栈内复用模式</strong></li>
+</ul>
+<blockquote>
+<p>一种单例模式。只要Activity的实例在一个栈中存在，再次启动Activity都不会创建实例，只会回调onNewIntent()，并从栈中弹出实例上面的所有Activity。</p>
+</blockquote>
+<p>适合作为程序的入口点，例如浏览器的主界面。不管从多少个应用启动浏览器，只会启动主界面一次，其余情况都会走onNewInetnt()，并且会清空主界面上的其他页面。</p>
+<ul>
+<li><strong>singleInstance ： 单实例模式</strong></li>
+</ul>
+<blockquote>
+<p>具有singleTask的所有特性，设置模式的Activity只能存在一个任务栈中。</p>
+</blockquote>
+<p>例如闹钟的响铃界面。你以前设置了一个闹钟：上午6点。在5点58分时。你启动了闹钟的设置界面，并按home返回桌面；一分钟后，你在和朋友TIM上聊天。6点时，闹钟响了，并弹出对话框式的Activity（它就是以SingleInstance模式打开的）。此时你按返回键，你仍然在聊天界面，因为它的Activity所在的Task栈只有他的一个元素，因此退出后栈空。若是SingTask模式打开的Activity，则它返回后应该进入至设置界面</p>
+<h3 id="三、IntentFilter的匹配规则"><a href="#三、IntentFilter的匹配规则" class="headerlink" title="三、IntentFilter的匹配规则"></a>三、IntentFilter的匹配规则</h3><p>Activity的启动不是显示就是隐式，如果共存则是显示为主。而隐式调用则需要Intent能够匹配目标组件的IntentFilter中所设置的过滤信息，如果不匹配则无法启动。</p>
+<p>三种匹配规则如下：</p>
+<p>1.action的匹配规则<br>2.category的匹配规则<br>3.data的匹配规则</p>
+<h3 id="四、一些问题补充："><a href="#四、一些问题补充：" class="headerlink" title="四、一些问题补充："></a>四、一些问题补充：</h3><p><strong>问</strong>：<br>清晰的描述下onNewIntent和onConfigurationChanged这两个生命周期方法的场景？</p>
+<p><strong>答</strong>：<br><code>onNewInetnt</code>：在singleTop，singleTask，singleInstance再次启动同的Activity，如果期望只有一个实例存在，再次启动就会调用onNewIntent()，在onNewIntent可以通过setInetnt(intent)刷新intent数据。</p>
+<p><code>onConfigurationChanged</code>：如下</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.imgur.com/1EIyJUA.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>要注意的是从Android3.2后（API13），当设备旋转时，screen size也会改变，因此需要设置android:configChanges=”oraientation|screenSize”</p>
+<p><strong>问</strong>：<br>onStart和OnResume、onPause和OnStop从描述上来看差不多，对我们来说有什么实质上的不同呢？</p>
+<p><strong>答</strong>：<br>从使用过程来说他们两对确实差不多，甚至可以只用一对，但他们两个配对的回调分别表示不同的意义，onStart和onStop是从是否可见的角度来回调的，而OnResume和OnPause是从Activity是否位于前台这个角度来回调的。</p>
+<p><strong>问</strong>：<br>假设当前Activity为A，如果这时用户打开一个新的ActivityB，那么B的onResume和A的onPause哪个先执行呢？</p>
+<p><strong>答</strong><br>A的onPause先调用，B的onResume再执行。原因的话在后面的工作原理会再次说明，这里先简单的说明结果。</p>
+<h3 id="学习小结"><a href="#学习小结" class="headerlink" title="学习小结"></a>学习小结</h3><p>通过这篇你学会了什么？</p>
+<p>1.Activity生命周期不同情况</p>
+<p>2.Activity的启动模式</p>
+<p>3.匹配规则</p>
+<p>4.一些面试题的思考</p>
+<p><strong>参考资料：Android开发艺术，Planet。</strong></p>
+<p>当然关于Activity的工作过程有会专门的一篇来整理，那么我们继续看下去吧~</p>
+<pre><code>1/1/2018 10:15:32 PM 第3次修改
+</code></pre>
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-04-16T07:10:02.233Z" itemprop="dateUpdated">2018-04-16 15:10:02</time>
+</span><br>
+
+
+        
+        小小鼓励一下哟~~，转发著名出处~~：<a href="/2018/01/01/不想提交TAT/Activity/" target="_blank" rel="external">https://markfrank01.github.io/2018/01/01/不想提交TAT/Activity/</a>
+        
+    </div>
+    <footer>
+        <a href="https://markfrank01.github.io">
+            <img src="/img/cat.jpg" alt="嘉晨">
+            嘉晨
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/进阶之路/">进阶之路</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://markfrank01.github.io/2018/01/01/不想提交TAT/Activity/&title=《四大组件之Activity》 — Five&pic=https://markfrank01.github.io/img/cat.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://markfrank01.github.io/2018/01/01/不想提交TAT/Activity/&title=《四大组件之Activity》 — Five&source=Activity的回顾" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://markfrank01.github.io/2018/01/01/不想提交TAT/Activity/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《四大组件之Activity》 — Five&url=https://markfrank01.github.io/2018/01/01/不想提交TAT/Activity/&via=https://markfrank01.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://markfrank01.github.io/2018/01/01/不想提交TAT/Activity/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/10/15/不想提交TAT/行动指南/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">行动指南</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/01/02/不想提交TAT/Service/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">四大组件之Service</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大家~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechatpay.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechatpay.jpg" data-alipay="/img/alipayMe.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>嘉晨 &copy; 2015 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://markfrank01.github.io/2018/01/01/不想提交TAT/Activity/&title=《四大组件之Activity》 — Five&pic=https://markfrank01.github.io/img/cat.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://markfrank01.github.io/2018/01/01/不想提交TAT/Activity/&title=《四大组件之Activity》 — Five&source=Activity的回顾" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://markfrank01.github.io/2018/01/01/不想提交TAT/Activity/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《四大组件之Activity》 — Five&url=https://markfrank01.github.io/2018/01/01/不想提交TAT/Activity/&via=https://markfrank01.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://markfrank01.github.io/2018/01/01/不想提交TAT/Activity/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuUlEQVR42u3aO1LDQBAFQO5/aagiosCW33zWKGhFFHjFtgLN+M1+fMTX5/d1/def199V15+5/n2yh9GFh4eH19r6s6u30WRVsrZ6twePAA8PD+8Y77oYvLhF/DbO75bwogKGh4eH96+8vOF+tvXre/aoeHh4eHfm5Zu7XptHGNXHjYeHh/dO3qQJzl/xecte3c9C1oKHh4cX86oDsDv8fHC+h4eHhzeYqufFIGmX86Z868LDw8M7wevFqb13ch7y5kUiKht4eHh4B3jVzZ0bcVX31qTi4eHhDXi9Z5APt3rHDuYhCB4eHt5pXu+IwFZb3AuRy1kLHh4e3uYUfvRyn5eEpGUfHVbAw8PDW+VVX+sJtTrgT4pTtXjg4eHhneZVW96clxwa6B1QKEz28PDw8A7wJpvejQ8mx79e1D08PDy8Jd5kWDUZTeVloHdsCw8PD+8crzroqoa5hWcc72etpcbDw8MbhxFJbJo303kMka/KywYeHh7eOV6yrYWePQ41eoFv4XsDHh4e3pg3aVvzhrt3bCvHPH3ceHh4eAd4SaNcLRXVQwnVCpa33Xh4eHjneL3FeaudtMjVYwdrkQQeHh7eOMztDbGq4UVebHqjuAffG/Dw8PAO83rg3ZFY9c54eHh47+FVA4Xqkam8/c0HXYWigoeHh3eYV41Eq5g8VpgcZXh6dAAPDw9vidcbQW0Vg2rw0Ru84eHh4e3ykkh0EtQmI7G8xc+Pc+Hh4eG9hzdpfycxbi+ijcJfPDw8vAO86qip+m/ycVc1YpjEKHh4eHhzXl4Mcl6vWU8a7nLLjoeHh3eMV93EPMzNH1OvdOHh4eHdgXfdLvciid3S8uDzeHh4eDfg5RuaRMBVXnQyAg8PD2+V1xt67a6qBrvRgA0PDw/vAG8yAMtb8N5WqsO25aMDeHh4eL9/8wXtSPk+DdeJcwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '回来~';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '๑乛◡乛๑';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://markfrank01.github.io/"/>
-  <updated>2018-12-23T10:14:51.264Z</updated>
+  <updated>2018-12-30T15:52:08.063Z</updated>
   <id>https://markfrank01.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>公元前两天</title>
+    <link href="https://markfrank01.github.io/2018/12/30/%E5%85%AC%E5%85%83%E5%89%8D%E4%B8%A4%E5%A4%A9/"/>
+    <id>https://markfrank01.github.io/2018/12/30/公元前两天/</id>
+    <published>2018-12-30T15:07:40.000Z</published>
+    <updated>2018-12-30T15:52:08.063Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;要想号令大海，必须先要得到三叉戟&quot;&gt;&lt;a href=&quot;#要想号令大海，必须先要得到三叉戟&quot; class=&quot;headerlink&quot; title=&quot;要想号令大海，必须先要得到三叉戟&quot;&gt;&lt;/a&gt;要想号令大海，必须先要得到三叉戟&lt;/h3&gt;
+    
+    </summary>
+    
+      <category term="思考" scheme="https://markfrank01.github.io/categories/%E6%80%9D%E8%80%83/"/>
+    
+    
+      <category term="自我思考" scheme="https://markfrank01.github.io/tags/%E8%87%AA%E6%88%91%E6%80%9D%E8%80%83/"/>
+    
+  </entry>
   
   <entry>
     <title>公元前9天</title>
@@ -58,8 +78,8 @@
   
   <entry>
     <title>Todo-mvp</title>
-    <link href="https://markfrank01.github.io/2018/06/07/mvp/"/>
-    <id>https://markfrank01.github.io/2018/06/07/mvp/</id>
+    <link href="https://markfrank01.github.io/2018/06/07/%E4%B8%8D%E6%83%B3%E6%8F%90%E4%BA%A4TAT/mvp/"/>
+    <id>https://markfrank01.github.io/2018/06/07/不想提交TAT/mvp/</id>
     <published>2018-06-07T13:13:32.000Z</published>
     <updated>2018-07-22T10:41:50.228Z</updated>
     
@@ -78,8 +98,8 @@
   
   <entry>
     <title>四大组件之ContentProvider</title>
-    <link href="https://markfrank01.github.io/2018/01/05/ContentProvider/"/>
-    <id>https://markfrank01.github.io/2018/01/05/ContentProvider/</id>
+    <link href="https://markfrank01.github.io/2018/01/05/%E4%B8%8D%E6%83%B3%E6%8F%90%E4%BA%A4TAT/ContentProvider/"/>
+    <id>https://markfrank01.github.io/2018/01/05/不想提交TAT/ContentProvider/</id>
     <published>2018-01-05T02:33:24.000Z</published>
     <updated>2018-04-16T07:10:16.328Z</updated>
     
@@ -102,8 +122,8 @@
   
   <entry>
     <title>四大组件之BroadcastReceiver</title>
-    <link href="https://markfrank01.github.io/2018/01/03/BroadcastReceiver/"/>
-    <id>https://markfrank01.github.io/2018/01/03/BroadcastReceiver/</id>
+    <link href="https://markfrank01.github.io/2018/01/03/%E4%B8%8D%E6%83%B3%E6%8F%90%E4%BA%A4TAT/BroadcastReceiver/"/>
+    <id>https://markfrank01.github.io/2018/01/03/不想提交TAT/BroadcastReceiver/</id>
     <published>2018-01-03T12:03:11.000Z</published>
     <updated>2018-04-16T07:10:07.741Z</updated>
     
@@ -126,8 +146,8 @@
   
   <entry>
     <title>四大组件之Service</title>
-    <link href="https://markfrank01.github.io/2018/01/02/Service/"/>
-    <id>https://markfrank01.github.io/2018/01/02/Service/</id>
+    <link href="https://markfrank01.github.io/2018/01/02/%E4%B8%8D%E6%83%B3%E6%8F%90%E4%BA%A4TAT/Service/"/>
+    <id>https://markfrank01.github.io/2018/01/02/不想提交TAT/Service/</id>
     <published>2018-01-02T11:45:33.000Z</published>
     <updated>2018-04-16T07:10:04.787Z</updated>
     
@@ -150,8 +170,8 @@
   
   <entry>
     <title>四大组件之Activity</title>
-    <link href="https://markfrank01.github.io/2018/01/01/Activity/"/>
-    <id>https://markfrank01.github.io/2018/01/01/Activity/</id>
+    <link href="https://markfrank01.github.io/2018/01/01/%E4%B8%8D%E6%83%B3%E6%8F%90%E4%BA%A4TAT/Activity/"/>
+    <id>https://markfrank01.github.io/2018/01/01/不想提交TAT/Activity/</id>
     <published>2018-01-01T14:15:32.000Z</published>
     <updated>2018-04-16T07:10:02.233Z</updated>
     
@@ -174,8 +194,8 @@
   
   <entry>
     <title>行动指南</title>
-    <link href="https://markfrank01.github.io/2017/10/15/%E8%A1%8C%E5%8A%A8%E6%8C%87%E5%8D%97/"/>
-    <id>https://markfrank01.github.io/2017/10/15/行动指南/</id>
+    <link href="https://markfrank01.github.io/2017/10/15/%E4%B8%8D%E6%83%B3%E6%8F%90%E4%BA%A4TAT/%E8%A1%8C%E5%8A%A8%E6%8C%87%E5%8D%97/"/>
+    <id>https://markfrank01.github.io/2017/10/15/不想提交TAT/行动指南/</id>
     <published>2017-10-15T11:47:36.000Z</published>
     <updated>2017-10-15T12:53:41.972Z</updated>
     
@@ -197,8 +217,8 @@
   
   <entry>
     <title>Git笔记----Git的使用</title>
-    <link href="https://markfrank01.github.io/2017/10/10/Git%E7%AC%94%E8%AE%B0/"/>
-    <id>https://markfrank01.github.io/2017/10/10/Git笔记/</id>
+    <link href="https://markfrank01.github.io/2017/10/10/%E4%B8%8D%E6%83%B3%E6%8F%90%E4%BA%A4TAT/Git%E7%AC%94%E8%AE%B0/"/>
+    <id>https://markfrank01.github.io/2017/10/10/不想提交TAT/Git笔记/</id>
     <published>2017-10-10T08:15:43.000Z</published>
     <updated>2017-10-14T15:56:43.809Z</updated>
     
@@ -217,8 +237,8 @@
   
   <entry>
     <title>RxLearning(RxJava 和 Retrofit学习系列)</title>
-    <link href="https://markfrank01.github.io/2017/09/15/RxLearning%E7%AC%AC%E4%B8%80%E5%AD%A3%E7%AC%AC%E4%B8%80%E7%AF%87/"/>
-    <id>https://markfrank01.github.io/2017/09/15/RxLearning第一季第一篇/</id>
+    <link href="https://markfrank01.github.io/2017/09/15/%E4%B8%8D%E6%83%B3%E6%8F%90%E4%BA%A4TAT/RxLearning%E7%AC%AC%E4%B8%80%E5%AD%A3%E7%AC%AC%E4%B8%80%E7%AF%87/"/>
+    <id>https://markfrank01.github.io/2017/09/15/不想提交TAT/RxLearning第一季第一篇/</id>
     <published>2017-09-15T08:39:05.000Z</published>
     <updated>2017-10-01T12:51:18.832Z</updated>
     
@@ -244,8 +264,8 @@
   
   <entry>
     <title>打造自定义刷新加载框架(二)</title>
-    <link href="https://markfrank01.github.io/2017/04/14/MySwipeRefresh02/"/>
-    <id>https://markfrank01.github.io/2017/04/14/MySwipeRefresh02/</id>
+    <link href="https://markfrank01.github.io/2017/04/14/%E4%B8%8D%E6%83%B3%E6%8F%90%E4%BA%A4TAT/MySwipeRefresh02/"/>
+    <id>https://markfrank01.github.io/2017/04/14/不想提交TAT/MySwipeRefresh02/</id>
     <published>2017-04-14T02:28:38.000Z</published>
     <updated>2018-07-11T15:27:24.879Z</updated>
     
@@ -264,8 +284,8 @@
   
   <entry>
     <title>打造自定义刷新加载框架(一)</title>
-    <link href="https://markfrank01.github.io/2017/04/10/MySwipeRefresh01/"/>
-    <id>https://markfrank01.github.io/2017/04/10/MySwipeRefresh01/</id>
+    <link href="https://markfrank01.github.io/2017/04/10/%E4%B8%8D%E6%83%B3%E6%8F%90%E4%BA%A4TAT/MySwipeRefresh01/"/>
+    <id>https://markfrank01.github.io/2017/04/10/不想提交TAT/MySwipeRefresh01/</id>
     <published>2017-04-10T15:15:32.000Z</published>
     <updated>2018-07-11T14:54:02.442Z</updated>
     
@@ -284,8 +304,8 @@
   
   <entry>
     <title>js异步和网络Api发展史</title>
-    <link href="https://markfrank01.github.io/2017/03/27/js%E5%BC%82%E6%AD%A5%E5%92%8C%E7%BD%91%E7%BB%9Capi%E5%8F%91%E5%B1%95%E5%8F%B2/"/>
-    <id>https://markfrank01.github.io/2017/03/27/js异步和网络api发展史/</id>
+    <link href="https://markfrank01.github.io/2017/03/27/%E4%B8%8D%E6%83%B3%E6%8F%90%E4%BA%A4TAT/js%E5%BC%82%E6%AD%A5%E5%92%8C%E7%BD%91%E7%BB%9Capi%E5%8F%91%E5%B1%95%E5%8F%B2/"/>
+    <id>https://markfrank01.github.io/2017/03/27/不想提交TAT/js异步和网络api发展史/</id>
     <published>2017-03-27T11:06:50.000Z</published>
     <updated>2017-04-09T04:12:10.489Z</updated>
     
@@ -310,8 +330,8 @@
   
   <entry>
     <title>通过css 3d transform让页面变3d</title>
-    <link href="https://markfrank01.github.io/2017/03/26/%E9%80%9A%E8%BF%87css%203d%20transform%E8%AE%A9%E9%A1%B5%E9%9D%A2%E5%8F%983d/"/>
-    <id>https://markfrank01.github.io/2017/03/26/通过css 3d transform让页面变3d/</id>
+    <link href="https://markfrank01.github.io/2017/03/26/%E4%B8%8D%E6%83%B3%E6%8F%90%E4%BA%A4TAT/%E9%80%9A%E8%BF%87css%203d%20transform%E8%AE%A9%E9%A1%B5%E9%9D%A2%E5%8F%983d/"/>
+    <id>https://markfrank01.github.io/2017/03/26/不想提交TAT/通过css 3d transform让页面变3d/</id>
     <published>2017-03-26T01:48:29.000Z</published>
     <updated>2017-04-09T04:12:10.490Z</updated>
     
@@ -332,8 +352,8 @@
   
   <entry>
     <title>web动画框架的初步设计</title>
-    <link href="https://markfrank01.github.io/2017/03/22/web%E5%8A%A8%E7%94%BB%E6%A1%86%E6%9E%B6%E7%9A%84%E5%88%9D%E6%AD%A5%E8%AE%BE%E8%AE%A1/"/>
-    <id>https://markfrank01.github.io/2017/03/22/web动画框架的初步设计/</id>
+    <link href="https://markfrank01.github.io/2017/03/22/%E4%B8%8D%E6%83%B3%E6%8F%90%E4%BA%A4TAT/web%E5%8A%A8%E7%94%BB%E6%A1%86%E6%9E%B6%E7%9A%84%E5%88%9D%E6%AD%A5%E8%AE%BE%E8%AE%A1/"/>
+    <id>https://markfrank01.github.io/2017/03/22/不想提交TAT/web动画框架的初步设计/</id>
     <published>2017-03-22T11:38:00.000Z</published>
     <updated>2017-04-09T04:12:10.490Z</updated>
     
@@ -358,8 +378,8 @@
   
   <entry>
     <title>js获取元素绝对位置</title>
-    <link href="https://markfrank01.github.io/2017/03/20/js%E8%8E%B7%E5%8F%96%E5%85%83%E7%B4%A0%E7%BB%9D%E5%AF%B9%E4%BD%8D%E7%BD%AE/"/>
-    <id>https://markfrank01.github.io/2017/03/20/js获取元素绝对位置/</id>
+    <link href="https://markfrank01.github.io/2017/03/20/%E4%B8%8D%E6%83%B3%E6%8F%90%E4%BA%A4TAT/js%E8%8E%B7%E5%8F%96%E5%85%83%E7%B4%A0%E7%BB%9D%E5%AF%B9%E4%BD%8D%E7%BD%AE/"/>
+    <id>https://markfrank01.github.io/2017/03/20/不想提交TAT/js获取元素绝对位置/</id>
     <published>2017-03-20T11:30:50.000Z</published>
     <updated>2017-04-09T04:12:10.489Z</updated>
     
@@ -383,8 +403,8 @@
   
   <entry>
     <title>one - hexo单页面炫酷主题</title>
-    <link href="https://markfrank01.github.io/2017/03/18/one%E4%B8%BB%E9%A2%98/"/>
-    <id>https://markfrank01.github.io/2017/03/18/one主题/</id>
+    <link href="https://markfrank01.github.io/2017/03/18/%E4%B8%8D%E6%83%B3%E6%8F%90%E4%BA%A4TAT/one%E4%B8%BB%E9%A2%98/"/>
+    <id>https://markfrank01.github.io/2017/03/18/不想提交TAT/one主题/</id>
     <published>2017-03-18T02:12:10.000Z</published>
     <updated>2017-04-09T04:12:10.490Z</updated>
     
@@ -409,8 +429,8 @@
   
   <entry>
     <title>新的旅程</title>
-    <link href="https://markfrank01.github.io/2017/03/01/MyFirst/"/>
-    <id>https://markfrank01.github.io/2017/03/01/MyFirst/</id>
+    <link href="https://markfrank01.github.io/2017/03/01/%E4%B8%8D%E6%83%B3%E6%8F%90%E4%BA%A4TAT/MyFirst/"/>
+    <id>https://markfrank01.github.io/2017/03/01/不想提交TAT/MyFirst/</id>
     <published>2017-03-01T09:12:20.000Z</published>
     <updated>2017-04-09T09:14:57.307Z</updated>
     
@@ -429,8 +449,8 @@
   
   <entry>
     <title>hexo的live2d插件</title>
-    <link href="https://markfrank01.github.io/2017/01/29/hexo%E7%9A%84live2d%E6%8F%92%E4%BB%B6/"/>
-    <id>https://markfrank01.github.io/2017/01/29/hexo的live2d插件/</id>
+    <link href="https://markfrank01.github.io/2017/01/29/%E4%B8%8D%E6%83%B3%E6%8F%90%E4%BA%A4TAT/hexo%E7%9A%84live2d%E6%8F%92%E4%BB%B6/"/>
+    <id>https://markfrank01.github.io/2017/01/29/不想提交TAT/hexo的live2d插件/</id>
     <published>2017-01-29T08:29:29.000Z</published>
     <updated>2017-04-09T04:12:10.489Z</updated>
     

@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>web动画框架的初步设计 | Five | Enjoy Code</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="技术,js,html,开源">
+    <meta name="description" content="我希望有一天webApp能够达到原生应用的用户体验。">
+<meta name="keywords" content="技术,js,html,开源">
+<meta property="og:type" content="article">
+<meta property="og:title" content="web动画框架的初步设计">
+<meta property="og:url" content="https://markfrank01.github.io/2017/03/22/不想提交TAT/web动画框架的初步设计/index.html">
+<meta property="og:site_name" content="Five">
+<meta property="og:description" content="我希望有一天webApp能够达到原生应用的用户体验。">
+<meta property="og:image" content="https://markfrank01.github.io/img/web动画框架的初步设计/炫酷ui.gif">
+<meta property="og:image" content="https://markfrank01.github.io/img/web动画框架的初步设计/效果图.gif">
+<meta property="og:image" content="https://markfrank01.github.io/img/web动画框架的初步设计/分割.png">
+<meta property="og:image" content="https://markfrank01.github.io/img/web动画框架的初步设计/key.png">
+<meta property="og:image" content="https://markfrank01.github.io/img/web动画框架的初步设计/float.png">
+<meta property="og:image" content="https://markfrank01.github.io/img/web动画框架的初步设计/垃圾2.png">
+<meta property="og:updated_time" content="2017-04-09T04:12:10.490Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="web动画框架的初步设计">
+<meta name="twitter:description" content="我希望有一天webApp能够达到原生应用的用户体验。">
+<meta name="twitter:image" content="https://markfrank01.github.io/img/web动画框架的初步设计/炫酷ui.gif">
+    
+        <link rel="alternate" type="application/atom+xml" title="Five" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/cat.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">嘉晨</h5>
+          <a href="mailto:1123212438@qq.com" title="1123212438@qq.com" class="mail">1123212438@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/MarkFrank01" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">web动画框架的初步设计</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">web动画框架的初步设计</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-03-22T11:38:00.000Z" itemprop="datePublished" class="page-time">
+  2017-03-22
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/">技术</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#缘起"><span class="post-toc-number">1.</span> <span class="post-toc-text">缘起</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#效果"><span class="post-toc-number">2.</span> <span class="post-toc-text">效果</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#思路"><span class="post-toc-number">3.</span> <span class="post-toc-text">思路</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#布局层"><span class="post-toc-number">4.</span> <span class="post-toc-text">布局层</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#结尾"><span class="post-toc-number">5.</span> <span class="post-toc-text">结尾</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-不想提交TAT/web动画框架的初步设计"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">web动画框架的初步设计</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-03-22 19:38:00" datetime="2017-03-22T11:38:00.000Z"  itemprop="datePublished">2017-03-22</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/">技术</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>我希望有一天webApp能够达到原生应用的用户体验。</p>
+<a id="more"></a>
+<p><em>最后证实是重复造轮子，人家还比我造的好太多，大家都散了吧。 （ 让我哭一会</em><br><a href="https://github.com/berzniz/react-overdrive" target="_blank" rel="external">https://github.com/berzniz/react-overdrive</a></p>
+<p><br></p>
+<p><br></p>
+<hr>
+<blockquote>
+<p>第一次写这么复杂的东西，我的语文水平我自己清楚，看不懂的可以直接到下面评论区夸我了。</p>
+</blockquote>
+<h2 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a><del>缘起</del></h2><p>我是怎么喜欢上material design的？ 多半是因为这张炫酷的图。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/web动画框架的初步设计/炫酷ui.gif" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>哇！炫酷！流畅！</p>
+<p>我立即搜索material design的前端框架，发现没有一款可以实现这种效果的。</p>
+<p>什么？？？？ 我大前端连区区一个动画都搞不定！！！</p>
+<blockquote>
+<p>codepen上的虽然有类似的特效，但从复用性，性能等方面考虑都没有能作为框架的。</p>
+</blockquote>
+<p>于是开始造轮之路。</p>
+<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>初步实现的效果图：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/web动画框架的初步设计/效果图.gif" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<blockquote>
+<p>效果可能不是很好，可能是因为没有调整动画曲线，不过这都是小问题。<br>源码需要重构，不好意思拿出来。感兴趣的话可以联系我。</p>
+</blockquote>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>我们将前面的炫酷ui可以分成两部分。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/web动画框架的初步设计/分割.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>上面这两个界面分开来的话，相信对各位前端大神都是小菜一碟的吧。</p>
+<p>这个框架的思路就是用程序来自动补间。</p>
+<p>我们在每个元素身上放个key。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/web动画框架的初步设计/key.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>先记录下所有被标记的元素的位置。</p>
+<p>页面改变后将其自动补间到新的位置。包括高度宽度等css属性。</p>
+<p>嗯，但这个补间怎么做？<code>js</code>？<code>css transition</code>？</p>
+<p>显然<code>css transition</code>是更高效的选择，要使用<code>css transition</code>的前提就是页面的转换不能破坏这个元素。</p>
+<p>现有路由库如：<code>react-router</code>等，都是删掉原来的元素，填入新的元素，所以<code>css transition</code>是行不通的。</p>
+<p>然而我选了一种特别极端的方法，添加一个布局层。</p>
+<h2 id="布局层"><a href="#布局层" class="headerlink" title="布局层"></a>布局层</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/web动画框架的初步设计/float.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>上图红色部分就是布局层，布局层没有显示，没有动画，由路由负责管理。</p>
+<p>图片中有内容的元素是绝对定位的，存在在布局层之上，不受路由管理，称为<code>Plane</code>(面)。</p>
+<p>用程序把<code>Plane</code>放在对应的布局层之上，设置高度宽度，加上<code>css transition</code>。当布局层发送改变时，刷新<code>Plane</code>的位置，高度，宽度，内容。这个过程中<code>Plane</code>是不会被重建的于是<code>css transition</code>就产生了补间动画。</p>
+<blockquote>
+<p>得益于react的 vdom 和 jsx 我们可以按正常的方式写元素，然后把他们渲染在其他地方。</p>
+</blockquote>
+<hr>
+<p>再说下<a href="https://themes.materializecss.com/pages/demo#0" target="_blank" rel="external">这个站</a></p>
+<p>这个站也有布局转换的过渡效果。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/web动画框架的初步设计/垃圾2.png" alt="](/img/web动画框架的初步设计/垃圾1.png)![" title="">
+                </div>
+                <div class="image-caption">](/img/web动画框架的初步设计/垃圾1.png)![</div>
+            </figure>
+<p>可以看到布局变化后，原来的元素并没有被清理，codepen上许多方案也有这种缺陷，页面一多，就会有很多元素，肯定不行。</p>
+<p>这篇文章的方法会真正释放掉旧的元素，也算个优点。</p>
+<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>如果你有更好的方法欢迎与我讨论。</p>
+<p><span style="font-size:12px;color:#888">封面画师: <a href="http://www.pixiv.net/member.php?id=3376987" target="_blank" rel="external">秋月</a></span></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-04-09T04:12:10.490Z" itemprop="dateUpdated">2017-04-09 12:12:10</time>
+</span><br>
+
+
+        
+        小小鼓励一下哟~~，转发著名出处~~：<a href="/2017/03/22/不想提交TAT/web动画框架的初步设计/" target="_blank" rel="external">https://markfrank01.github.io/2017/03/22/不想提交TAT/web动画框架的初步设计/</a>
+        
+    </div>
+    <footer>
+        <a href="https://markfrank01.github.io">
+            <img src="/img/cat.jpg" alt="嘉晨">
+            嘉晨
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开源/">开源</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://markfrank01.github.io/2017/03/22/不想提交TAT/web动画框架的初步设计/&title=《web动画框架的初步设计》 — Five&pic=https://markfrank01.github.io/img/cat.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://markfrank01.github.io/2017/03/22/不想提交TAT/web动画框架的初步设计/&title=《web动画框架的初步设计》 — Five&source=我希望有一天webApp能够达到原生应用的用户体验。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://markfrank01.github.io/2017/03/22/不想提交TAT/web动画框架的初步设计/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《web动画框架的初步设计》 — Five&url=https://markfrank01.github.io/2017/03/22/不想提交TAT/web动画框架的初步设计/&via=https://markfrank01.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://markfrank01.github.io/2017/03/22/不想提交TAT/web动画框架的初步设计/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/03/20/不想提交TAT/js获取元素绝对位置/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">js获取元素绝对位置</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/03/26/不想提交TAT/通过css 3d transform让页面变3d/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">通过css 3d transform让页面变3d</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大家~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechatpay.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechatpay.jpg" data-alipay="/img/alipayMe.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>嘉晨 &copy; 2015 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://markfrank01.github.io/2017/03/22/不想提交TAT/web动画框架的初步设计/&title=《web动画框架的初步设计》 — Five&pic=https://markfrank01.github.io/img/cat.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://markfrank01.github.io/2017/03/22/不想提交TAT/web动画框架的初步设计/&title=《web动画框架的初步设计》 — Five&source=我希望有一天webApp能够达到原生应用的用户体验。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://markfrank01.github.io/2017/03/22/不想提交TAT/web动画框架的初步设计/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《web动画框架的初步设计》 — Five&url=https://markfrank01.github.io/2017/03/22/不想提交TAT/web动画框架的初步设计/&via=https://markfrank01.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://markfrank01.github.io/2017/03/22/不想提交TAT/web动画框架的初步设计/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADKklEQVR42u3ay25iQQwFwPz/TzPSrEZKCOe4LyMwdVcohKbLLCw/vr7i5/b3+ff1vb98f/f7CcmZ9/7n99cXP9jY2Nhvwr79+rRXTAL0jKDnFmxsbOyt7OTL7h2dXLFNV3mIk7BiY2NjY99NA3FSSWqBPNxtgsTGxsbGniWwWVCKcqIMMTY2NvZudtJUSi7RduZPipD/1EvDxsbGfnn2rEH/mq+fPt/GxsbGfjH27eCZ7cDkSzxX3fOHm2BjY2MvYiet/7ycaFPOs4fHD0TY2NjY69izhvvJhfJAt4s7USMMGxsbewV7NqxNBgltmNrxbRuIqAjBxsbGfkN2jizy4QiQDycuOx8bGxt7BfukzGhHBVeF+zzFYmNjY29i5437NuXMxgOzYXAbDmxsbOxPYOcFQJIqZis19eC2TbTY2NjY69hJ4dEyZsmsHTa3wwZsbGzsfew2XT17oJv/ALM0iY2Njb2J3RYSCTJPV1cNA+qQYWNjYy9lt8j8uld9Kv8xHgQOGxsbexE7T0Ut5iTt5cPa5A7Y2NjYu9ktNUk2OTJf+knSXrGCiY2Njb2OfbI0ORsAnAxr2zEDNjY29iew89KibdafDHRniSpqlmFjY2MvYp8nhtnoNw/fybbkg14aNjY29gp2MlLNwe0SZJ4+2/WgB6kXGxsbex17Nr5tC5g2dxzl5GTQi42Njb2CfbJSmRct+XJkcnJS/ETtMGxsbOwV7LwIyZv4+ZAgISXn5ymtqKuwsbGx34RdZLkymbVjgGu/K0qN2NjY2EvZs/WatqjI352Ndb/yfIiNjY29gn3tws0sNG2g2/FGUZNhY2NjL2I/I0W1Q4KrGlUPboWNjY29iD1r+py0pfL0eVJsFAMDbGxs7Ldi38pn1vSflTHn4967n8LGxsZexL52hFBkyPiEk8XQk/UgbGxs7Pdi542k5FptMsvPOf8sNjY29m52m2BmJcesy5WHrzgfGxsb+4PZebsn//tJWGcrPtjY2NifyT4ZwZ4PHk5+mB/excbGxl7HzhcuT5JZ0u6ZpcC84YWNjY29jz0bys7C1A5lz3+SIzw2Njb2q7P/AA3f1JhdBoIwAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '回来~';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '๑乛◡乛๑';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

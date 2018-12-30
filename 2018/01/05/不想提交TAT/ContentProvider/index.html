@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>四大组件之ContentProvider | Five | Enjoy Code</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Android,进阶之路,学习笔记">
+    <meta name="description" content="ContentProvider的回顾">
+<meta name="keywords" content="Android,进阶之路,学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="四大组件之ContentProvider">
+<meta property="og:url" content="https://markfrank01.github.io/2018/01/05/不想提交TAT/ContentProvider/index.html">
+<meta property="og:site_name" content="Five">
+<meta property="og:description" content="ContentProvider的回顾">
+<meta property="og:updated_time" content="2018-04-16T07:10:16.328Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="四大组件之ContentProvider">
+<meta name="twitter:description" content="ContentProvider的回顾">
+    
+        <link rel="alternate" type="application/atom+xml" title="Five" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/cat.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">嘉晨</h5>
+          <a href="mailto:1123212438@qq.com" title="1123212438@qq.com" class="mail">1123212438@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/MarkFrank01" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">四大组件之ContentProvider</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">四大组件之ContentProvider</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-01-05T02:33:24.000Z" itemprop="datePublished" class="page-time">
+  2018-01-05
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#引言"><span class="post-toc-number">1.</span> <span class="post-toc-text">引言</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、ContentProvider是什么"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">一、ContentProvider是什么</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、Binder的原理"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">二、Binder的原理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、ContentProvider的一些问题"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">三、ContentProvider的一些问题</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#学习小结"><span class="post-toc-number">2.</span> <span class="post-toc-text">学习小结</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-不想提交TAT/ContentProvider"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">四大组件之ContentProvider</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-01-05 10:33:24" datetime="2018-01-05T02:33:24.000Z"  itemprop="datePublished">2018-01-05</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>ContentProvider的回顾<br><a id="more"></a></p>
+<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><blockquote>
+<p>上篇我们了解和补充学习了BroadcastReceive，现在我们来继续往下走，这篇我们来重新补充学习一下ContentProvider。</p>
+</blockquote>
+<p>清晰理解ContentProvider:</p>
+<p><strong>一、ContentProvider是什么</strong></p>
+<p><strong>二、Binder的原理</strong></p>
+<p><strong>三、ContentProvider的一些问题</strong></p>
+<h3 id="一、ContentProvider是什么"><a href="#一、ContentProvider是什么" class="headerlink" title="一、ContentProvider是什么"></a>一、ContentProvider是什么</h3><p>ContentProvider是Android中提供的专门用于不同应用间进行数据共享的方式，从这来看它本身就适合进程间的通信。</p>
+<p>它和Messager一样，ContentProvider的底层实现同样是Binder，虽然和AIDL底层实现相同但是系统为我们做了封装。所以我们无需关心底层的细节就可以轻松实现IPC。</p>
+<h3 id="二、Binder的原理"><a href="#二、Binder的原理" class="headerlink" title="二、Binder的原理"></a>二、Binder的原理</h3><p>这个地方需要我们重点去理解，先挖个坑，到时候我们专门有一篇学习IPC机制的Binder。</p>
+<h3 id="三、ContentProvider的一些问题"><a href="#三、ContentProvider的一些问题" class="headerlink" title="三、ContentProvider的一些问题"></a>三、ContentProvider的一些问题</h3><p>问：</p>
+<blockquote>
+<p>ContentProvider是如何实现共享数据的？</p>
+</blockquote>
+<p>答：</p>
+<ol>
+<li>继承ContentProvider并重写insert,query,…等重要方法。</li>
+<li>在AndroidManifest.xml使用<provider>对该ContentProvider进行配置，为了能让其他应用找到该ContentProvider，ContentProvider需要采用了authorities（主机名/域名）对它进行唯一标识，然后再将数据添加到ContentProvider中。</provider></li>
+<li>在其它应用中通过ContentResolver使用定义的Uri访问并操作这些被暴露的数据。</li>
+</ol>
+<p>问：</p>
+<blockquote>
+<p>ContentProvider如何控制数据访问权限？</p>
+</blockquote>
+<p>答：</p>
+<ol>
+<li>向此应用设置一个android:sharedUserId，然后需要访问此数据的应用也设置同一个sharedUserId，具有相同的sharedUserId的应用间可以共享数据。但是这种方法不够安全，也无法做到对不同数据进行不同读写权限的管理。</li>
+<li>使用ContentProvider中的数据共享规则</li>
+</ol>
+<h2 id="学习小结"><a href="#学习小结" class="headerlink" title="学习小结"></a>学习小结</h2><p>1.对ContentProvider进行了重新的回顾</p>
+<p>2.重新补充一些Binder原理</p>
+<p>3.重新回忆了ContentProvider共享数据和控制数据访问权限的办法</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-04-16T07:10:16.328Z" itemprop="dateUpdated">2018-04-16 15:10:16</time>
+</span><br>
+
+
+        
+        小小鼓励一下哟~~，转发著名出处~~：<a href="/2018/01/05/不想提交TAT/ContentProvider/" target="_blank" rel="external">https://markfrank01.github.io/2018/01/05/不想提交TAT/ContentProvider/</a>
+        
+    </div>
+    <footer>
+        <a href="https://markfrank01.github.io">
+            <img src="/img/cat.jpg" alt="嘉晨">
+            嘉晨
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/进阶之路/">进阶之路</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://markfrank01.github.io/2018/01/05/不想提交TAT/ContentProvider/&title=《四大组件之ContentProvider》 — Five&pic=https://markfrank01.github.io/img/cat.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://markfrank01.github.io/2018/01/05/不想提交TAT/ContentProvider/&title=《四大组件之ContentProvider》 — Five&source=ContentProvider的回顾" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://markfrank01.github.io/2018/01/05/不想提交TAT/ContentProvider/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《四大组件之ContentProvider》 — Five&url=https://markfrank01.github.io/2018/01/05/不想提交TAT/ContentProvider/&via=https://markfrank01.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://markfrank01.github.io/2018/01/05/不想提交TAT/ContentProvider/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/01/03/不想提交TAT/BroadcastReceiver/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">四大组件之BroadcastReceiver</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/06/07/不想提交TAT/mvp/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Todo-mvp</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大家~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechatpay.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechatpay.jpg" data-alipay="/img/alipayMe.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>嘉晨 &copy; 2015 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://markfrank01.github.io/2018/01/05/不想提交TAT/ContentProvider/&title=《四大组件之ContentProvider》 — Five&pic=https://markfrank01.github.io/img/cat.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://markfrank01.github.io/2018/01/05/不想提交TAT/ContentProvider/&title=《四大组件之ContentProvider》 — Five&source=ContentProvider的回顾" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://markfrank01.github.io/2018/01/05/不想提交TAT/ContentProvider/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《四大组件之ContentProvider》 — Five&url=https://markfrank01.github.io/2018/01/05/不想提交TAT/ContentProvider/&via=https://markfrank01.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://markfrank01.github.io/2018/01/05/不想提交TAT/ContentProvider/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACt0lEQVR42u3awW7bMBAE0P7/T6dATwUCRzO7pJOiTydDtiQ+BSCZ2f31Kz4+/hzJ57/PfP7N11d9vsOr84cPPDw8vNHQk8e8uqo9kyM3v8fDw8O7zcsXg+TV5PfJl5l8PHh4eHg/h9cO/ewGHQ8PD+9f5OX4PD6YLSp4eHh4P4GXx6nt1J9Hujn+StaCh4eHF/POboLf8/nb6nt4eHj/Pe9jdMyih69LaMm39Tjx8PDwLvD22+W8yaBl5y/rYeR4eHh4F3jtjdp2qM2LyMeQvyA8PDy8PS+/YNOGtQ9eh383PDw8vAu8ffm/bS9oG6pmcQYeHh7eDV7bKJBP7rPhtgWwhzN4eHh4l3mz0tRmU54HGcNv8fDw8C7z8rJTu2y0U3weczxs7vHw8PAu8PL/3JOmgVPxxD5KLjJgPDw8vFG7VRsitC9l1jqQtya8fOl4eHh413jtY/LNd17a32yX8fDw8N7P27QRbApUbWtC3YyFh4eHd4E3284mA022vHkAkfAefo+Hh4d3lJdM6Jt0dBbjtvcsVj88PDy8Q7xkas4n+iSemIXCbVMCHh4e3lne5sGzKKGd4mdRSJFS4+Hh4U1q8dEsmmNmk3vbZLDKevHw8PAWvFlz6qn32oYR9SYbDw8P7wIvL//vp/VZu9UswMXDw8O7zcuRbVQxK//PotuHp+Dh4eEd5bWNAvk7m7VebTbWeHh4eO/kJXFtHj202/Szx8sGAjw8PLw1bzZBt4NuA458OXnYXuPh4eFd4M1Wkra9oC2zber+w7IcHh4e3qi2nkexs2m9LXfl10alLzw8PLwLvHYxaAtXm+173rxV59B4eHh4b+HN2LPN+j74wMPDw/teXhvs5vHrqZYFPDw8vHfy2uLTLEqYbbXbGBcPDw/vNq/u0jrUXJUMt108hkg8PDy8lPcbQGI1ymepppMAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '回来~';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '๑乛◡乛๑';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

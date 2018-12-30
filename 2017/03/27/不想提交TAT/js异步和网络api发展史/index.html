@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>js异步和网络Api发展史 | Five | Enjoy Code</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="技术,js,web">
+    <meta name="description" content="从ajax到fetch，从回调到async，滑稽带你领略js异步和网络Api发展史。仅仅是速览不会深入">
+<meta name="keywords" content="技术,js,web">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js异步和网络Api发展史">
+<meta property="og:url" content="https://markfrank01.github.io/2017/03/27/不想提交TAT/js异步和网络api发展史/index.html">
+<meta property="og:site_name" content="Five">
+<meta property="og:description" content="从ajax到fetch，从回调到async，滑稽带你领略js异步和网络Api发展史。仅仅是速览不会深入">
+<meta property="og:updated_time" content="2017-04-09T04:12:10.489Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js异步和网络Api发展史">
+<meta name="twitter:description" content="从ajax到fetch，从回调到async，滑稽带你领略js异步和网络Api发展史。仅仅是速览不会深入">
+    
+        <link rel="alternate" type="application/atom+xml" title="Five" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/cat.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">嘉晨</h5>
+          <a href="mailto:1123212438@qq.com" title="1123212438@qq.com" class="mail">1123212438@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/MarkFrank01" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">js异步和网络Api发展史</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">js异步和网络Api发展史</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-03-27T11:06:50.000Z" itemprop="datePublished" class="page-time">
+  2017-03-27
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/">技术</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#js运行顺序"><span class="post-toc-number">1.</span> <span class="post-toc-text">js运行顺序</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#异步"><span class="post-toc-number">2.</span> <span class="post-toc-text">异步</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#回调（callback）"><span class="post-toc-number">3.</span> <span class="post-toc-text">回调（callback）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Ajax"><span class="post-toc-number">4.</span> <span class="post-toc-text">Ajax</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Promise-（承诺）"><span class="post-toc-number">5.</span> <span class="post-toc-text">Promise （承诺）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#fetch"><span class="post-toc-number">6.</span> <span class="post-toc-text">fetch</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Generator-函数"><span class="post-toc-number">7.</span> <span class="post-toc-text">Generator 函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#async-函数"><span class="post-toc-number">8.</span> <span class="post-toc-text">async 函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#async-异常处理"><span class="post-toc-number">9.</span> <span class="post-toc-text">async 异常处理</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-不想提交TAT/js异步和网络api发展史"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">js异步和网络Api发展史</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-03-27 19:06:50" datetime="2017-03-27T11:06:50.000Z"  itemprop="datePublished">2017-03-27</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/">技术</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p>从ajax到fetch，从回调到async，滑稽带你领略js异步和网络Api发展史。<br>仅仅是速览不会深入</p>
+</blockquote>
+<a id="more"></a>
+<p>js是事件驱动的语言，单进程单线程。js主线程中有一个<code>Event Loop</code>（事件循环）。</p>
+<h2 id="js运行顺序"><a href="#js运行顺序" class="headerlink" title="js运行顺序"></a>js运行顺序</h2><p>js先执行一遍所有js文件，然后进入<code>Event Loop</code>，等到有事件进入，就执行事件处理程序，执行完后再次回到<code>Event Loop</code>。</p>
+<p>举个例子:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"hello"</span>);</div><div class="line">&#125;,<span class="number">0</span>);</div><div class="line"><span class="comment">//死循环</span></div><div class="line"><span class="keyword">while</span>(<span class="literal">true</span>)&#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>如果你在浏览器中运行，页面会卡死（在一些浏览器中仍可以滚动），因为js不执行完，浏览器不会做任何响应。</p>
+</blockquote>
+<p>上面的代码永远不会输出hello，因为<code>setTimeout(...,0)</code>，虽然是延时0ms，但还是会在下一个事件循环中被调用。</p>
+<p>而后面的<code>while</code>循环是死循环，js引擎永远执行不完，所以不会进入事件循环的，也就永远执行不到<code>timeout</code>里的代码</p>
+<p>更详细的介绍可在<a href="http://www.ruanyifeng.com/blog/2014/10/event-loop.html" target="_blank" rel="external">阮老师的博客</a>中看见。</p>
+<h2 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h2><p>所以啥是异步呢？</p>
+<p>我们先讲异步的反义词同步。</p>
+<blockquote>
+<p>同步就是在发出一个功能调用时，在没有得到结果之前，该调用就不返回。</p>
+</blockquote>
+<p>比如你发出一个网络请求请求一个数据，程序一直等待数据返回，不返回就不继续执行，这就是同步。</p>
+<p>异步要智能得多。在网络请求没有返回之前程序还会继续执行。</p>
+<p>延迟一秒在不同语言中同步、异步的不同写法:</p>
+<p>JS 异步<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="number">1</span>);</div><div class="line">setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="number">2</span>);</div><div class="line">&#125;,<span class="number">1000</span>);</div><div class="line"><span class="built_in">console</span>.log(<span class="number">3</span>);</div><div class="line"><span class="comment">//输出 1 3 2</span></div></pre></td></tr></table></figure></p>
+<p>Java 同步<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">System.out.print(<span class="number">1</span>);</div><div class="line"><span class="comment">//延迟1000ms</span></div><div class="line">Thread.sleep(<span class="number">1000</span>);</div><div class="line">System.out.print(<span class="number">2</span>);</div><div class="line">System.out.print(<span class="number">3</span>);</div><div class="line"><span class="comment">//输出 1 2 3</span></div></pre></td></tr></table></figure></p>
+<p>显然<code>Java</code>的同步跟符合人类的思想，顺序执行非常简单。</p>
+<p>但<code>JS</code>的优势也特别明显，在延迟时程序不会卡死，而是继续执行下去。</p>
+<h2 id="回调（callback）"><a href="#回调（callback）" class="headerlink" title="回调（callback）"></a>回调（callback）</h2><p>回调是JS异步编程最常见的方式。</p>
+<p><a href="https://www.zhihu.com/question/19801131" target="_blank" rel="external">回调函数（callback）是什么？(逼乎)</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">callback</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"hello"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">setTimeout(callback,<span class="number">1000</span>);</div></pre></td></tr></table></figure>
+<p>上面的<code>callback()</code>就作为回调函数，在1000ms后会被调用。</p>
+<h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><p>回到我们的主题，运用最广泛的网络api <code>ajax</code>就是以回调方式使用的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xmlhttp;</div><div class="line">xmlhttp=<span class="keyword">new</span> XMLHttpRequest();</div><div class="line"><span class="comment">//定义回调函数</span></div><div class="line">xmlhttp.onreadystatechange=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span></div><div class="line">&#123;</div><div class="line">	<span class="comment">//如果请求完成 且 返回状态码为200</span></div><div class="line">	<span class="keyword">if</span> (xmlhttp.readyState==<span class="number">4</span> &amp;&amp; xmlhttp.status==<span class="number">200</span>)</div><div class="line">	&#123;</div><div class="line">		<span class="comment">//输出内容</span></div><div class="line">		<span class="built_in">console</span>.log(xmlhttp.responseText);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">xmlhttp.open(<span class="string">"GET"</span>,<span class="string">"https://about.huaji8.top/links.json"</span>,<span class="literal">true</span><span class="comment">/*异步运行*/</span>);</div><div class="line"><span class="comment">//发送</span></div><div class="line">xmlhttp.send();</div></pre></td></tr></table></figure>
+<blockquote>
+<p>复制到浏览器<code>console</code>可以运行。</p>
+<p><code>jquery</code>封装的ajax写法要比原版简单的多，对这是原版。</p>
+<p>ajax也可以同步运行，只要将<code>XMLHttpRequest.open()</code>最后一个参数改成<code>false</code>，就是同步运行，执行<code>send()</code>后浏览器会卡住，直到请求返回。</p>
+</blockquote>
+<h2 id="Promise-（承诺）"><a href="#Promise-（承诺）" class="headerlink" title="Promise （承诺）"></a>Promise （承诺）</h2><p>Promise是一种更高级的回调接口。</p>
+<blockquote>
+<p>详细的介绍在这<a href="http://es6.ruanyifeng.com/#docs/promise" target="_blank" rel="external">ECMAScript 6 入门</a>，<code>Promise</code>的好处千千万，建议大家全部使用<code>Promise</code>，<code>jquery</code>的所有异步api也全部支持<code>Promise</code></p>
+<p>ES6 原生支持 Promise ， 在不支持的浏览器上可以使用垫片库 <a href="https://github.com/stefanpenner/es6-promise" target="_blank" rel="external">es6-promise</a></p>
+</blockquote>
+<p>下面是一个将<code>setTimeout()</code>改造成<code>Promise</code>的例子。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//返回一个Promise 就可以无限then()啦 还可以用catch()捕获异常</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">setTimeoutP</span>(<span class="params">ms</span>)</span>&#123;</div><div class="line">	<span class="comment">//创建Promise 如果成功就调用resolve，失败就调用reject</span></div><div class="line">	<span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>)=&gt;</span>&#123;</div><div class="line">		setTimeout(resolve,ms);</div><div class="line">	&#125;)</div><div class="line">&#125;</div><div class="line"></div><div class="line">setTimeoutP(<span class="number">1000</span>).then(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'Hello'</span>);</div><div class="line">	<span class="comment">// 返回Promise 可以在then()中继续执行</span></div><div class="line">	<span class="keyword">return</span> setTimeoutP(<span class="number">1000</span>);</div><div class="line">&#125;).then(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'world'</span>);</div><div class="line">	<span class="comment">// 返回数据 可以在then()中获取</span></div><div class="line">	<span class="keyword">return</span> <span class="number">123</span>;</div><div class="line">&#125;).then(<span class="function">(<span class="params">r</span>)=&gt;</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(r);</div><div class="line">&#125;)</div><div class="line"><span class="comment">//一秒后输出Hello</span></div></pre></td></tr></table></figure>
+<h2 id="fetch"><a href="#fetch" class="headerlink" title="fetch"></a>fetch</h2><p>fetch 是新的网络api 基于 Promise 设计。在旧的浏览器上可以使用 <a href="https://github.com/matthew-andrews/isomorphic-fetch" target="_blank" rel="external">isomorphic-fetch</a>，这个api是 node 和 浏览器环境通用的，实现同构应用必备的库。</p>
+<blockquote>
+<p>注：同构(isomorphic/universal)就是使前后端运行同一套代码的意思，后端一般是指 NodeJS 环境。</p>
+</blockquote>
+<p>范例<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">fetch(<span class="string">"https://about.huaji8.top/links.json"</span>)</div><div class="line">	.then(<span class="function">(<span class="params">e</span>)=&gt;</span>&#123;<span class="keyword">return</span> e.json()&#125;)</div><div class="line">	.then(<span class="function">(<span class="params">e</span>)=&gt;</span>&#123;<span class="built_in">console</span>.log(e)&#125;);</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>尝试在浏览器<code>console</code>中运行</p>
+</blockquote>
+<h2 id="Generator-函数"><a href="#Generator-函数" class="headerlink" title="Generator 函数"></a>Generator 函数</h2><p><code>Generator 函数</code> 是 <code>ES6</code> 提供的语法，不过很快就被 <code>ES2017</code> 的 <code>async 函数</code> 代替，所以不多说了，感兴趣的可以看<a href="http://es6.ruanyifeng.com/?search=fetch&amp;x=0&amp;y=0#docs/generator" target="_blank" rel="external">ECMAScript 6 入门</a></p>
+<blockquote>
+<p>第一次看到 <code>Generator 函数</code> 是在 <code>unity</code> 中的协程，现在js也有这个语法了。</p>
+</blockquote>
+<h2 id="async-函数"><a href="#async-函数" class="headerlink" title="async 函数"></a>async 函数</h2><p>重头来了，这是目前最屌的写法，真正用同步的写法写异步程序。</p>
+<blockquote>
+<p>async 实际是 <code>Generator 函数</code> 的语法糖， <code>Generator</code> 才是技术</p>
+</blockquote>
+<p>我们继续拿上面建的 <code>setTimeoutP()</code> 举例。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//返回一个Promise</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">setTimeoutP</span>(<span class="params">ms</span>)</span>&#123;</div><div class="line">	<span class="comment">//创建Promise 如果成功就调用resolve，失败就调用reject</span></div><div class="line">	<span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>)=&gt;</span>&#123;</div><div class="line">		setTimeout(resolve,ms);</div><div class="line">	&#125;)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">asyncDelay</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="comment">// await可以拿到Promise的返回值</span></div><div class="line">	<span class="keyword">let</span> O = <span class="keyword">await</span> fetch(<span class="string">"https://about.huaji8.top/links.json"</span>)</div><div class="line">		.then(<span class="function">(<span class="params">e</span>)=&gt;</span>&#123;<span class="keyword">return</span> e.json()&#125;)</div><div class="line">	<span class="keyword">await</span> setTimeoutP(<span class="number">1000</span>)</div><div class="line">	<span class="built_in">console</span>.log(O);</div><div class="line">	<span class="comment">//一秒后输出 https://about.huaji8.top/links.json 内容</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">asyncDelay();</div></pre></td></tr></table></figure>
+<blockquote>
+<p>尝试在浏览器<code>console</code>中运行</p>
+</blockquote>
+<h2 id="async-异常处理"><a href="#async-异常处理" class="headerlink" title="async 异常处理"></a>async 异常处理</h2><p><code>async</code> 可以以同步的方式编写异常处理。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">asyncDelay</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">try</span>&#123;</div><div class="line">		<span class="keyword">let</span> O = <span class="keyword">await</span> fetch(<span class="string">"https://about.huaji8.top/links.json"</span>)</div><div class="line">			.then(<span class="function">(<span class="params">e</span>)=&gt;</span>&#123;<span class="keyword">return</span> e.json()&#125;)</div><div class="line">	&#125;<span class="keyword">catch</span>(e)&#123;</div><div class="line">		<span class="comment">//输出异常</span></div><div class="line">		<span class="built_in">console</span>.log(e)</div><div class="line">		....</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">await</span> setTimeoutP(<span class="number">1000</span>)</div><div class="line">	<span class="built_in">console</span>.log(O);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>是不是超级方便呢。</p>
+<p>关于<code>async</code>的更多信息，可以查看<a href="http://es6.ruanyifeng.com/#docs/async" target="_blank" rel="external">ECMAScript 6 入门</a>或<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/AsyncFunction" target="_blank" rel="external">MDN</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-04-09T04:12:10.489Z" itemprop="dateUpdated">2017-04-09 12:12:10</time>
+</span><br>
+
+
+        
+        小小鼓励一下哟~~，转发著名出处~~：<a href="/2017/03/27/不想提交TAT/js异步和网络api发展史/" target="_blank" rel="external">https://markfrank01.github.io/2017/03/27/不想提交TAT/js异步和网络api发展史/</a>
+        
+    </div>
+    <footer>
+        <a href="https://markfrank01.github.io">
+            <img src="/img/cat.jpg" alt="嘉晨">
+            嘉晨
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://markfrank01.github.io/2017/03/27/不想提交TAT/js异步和网络api发展史/&title=《js异步和网络Api发展史》 — Five&pic=https://markfrank01.github.io/img/cat.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://markfrank01.github.io/2017/03/27/不想提交TAT/js异步和网络api发展史/&title=《js异步和网络Api发展史》 — Five&source=
+从ajax到fetch，从回调到async，滑稽带你领略js异步和网络Api发展史。仅仅是速览不会深入
+" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://markfrank01.github.io/2017/03/27/不想提交TAT/js异步和网络api发展史/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《js异步和网络Api发展史》 — Five&url=https://markfrank01.github.io/2017/03/27/不想提交TAT/js异步和网络api发展史/&via=https://markfrank01.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://markfrank01.github.io/2017/03/27/不想提交TAT/js异步和网络api发展史/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/03/26/不想提交TAT/通过css 3d transform让页面变3d/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">通过css 3d transform让页面变3d</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/04/10/不想提交TAT/MySwipeRefresh01/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">打造自定义刷新加载框架(一)</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大家~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechatpay.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechatpay.jpg" data-alipay="/img/alipayMe.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>嘉晨 &copy; 2015 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://markfrank01.github.io/2017/03/27/不想提交TAT/js异步和网络api发展史/&title=《js异步和网络Api发展史》 — Five&pic=https://markfrank01.github.io/img/cat.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://markfrank01.github.io/2017/03/27/不想提交TAT/js异步和网络api发展史/&title=《js异步和网络Api发展史》 — Five&source=
+从ajax到fetch，从回调到async，滑稽带你领略js异步和网络Api发展史。仅仅是速览不会深入
+" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://markfrank01.github.io/2017/03/27/不想提交TAT/js异步和网络api发展史/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《js异步和网络Api发展史》 — Five&url=https://markfrank01.github.io/2017/03/27/不想提交TAT/js异步和网络api发展史/&via=https://markfrank01.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://markfrank01.github.io/2017/03/27/不想提交TAT/js异步和网络api发展史/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADNklEQVR42u3awW7iUAwFUP7/p+m2Uku4toMUnJPViCnJO+nCta8fj/h6/rp+f/L42PX3Wa+e+MGTYGNjY38J+3l4JezkdSSf//2ZV+c5PtWxBRsbG3srOz9Q9XDHB02KVu+X8caIjY2NfWP2MTUvM/nRP1I+sbGxsbHj/52MkOavDBsbG/s+7PxhyeGOH9k7aPVFnDZLw8bGxr48u1dgrvnvj6fN2NjY2BdjP4vXJDzI44E8DGgqsLGxsRex8wKQD+irrUu1Ychf4puAGRsbG3s1u7qCM7lPUszKo/+kXcHGxsZexJ7Et/M1yt7KZjUeaM7MsLGxsS/PzgdA+UAnGQD14t7qK355QmxsbOzV7PmqzaRSTOLnvLnCxsbG3s1OikEeuyatSPVZ1bbkHx02Njb2InZ1HF992GQFpzr2Sp6CjY2NvY9dXYXMS1dexiYjp2rRwsbGxt7H7o2EJtUyX8SpDpXykAAbGxt7KztvDKqf9Ib4SVnKC/Aj3wbCxsbGXsHOb1SNEKoLQNV2pfyCsLGxsVewk5FNtbz1rvkyUCFswMbGxl7Hri67JH/o56TJMlD1W9jY2Nj72EmpSJqE3h3Oal3yZgYbGxt7H7sHOGuE1FsSyluO5lAJGxsb+0vYvSQhx1cjh15BytubaP6EjY2N/VXsfL0mHwNVF3R6gBOaGWxsbOx17ORH82i29/rmDUlhdoSNjY29iD2JCs4te3nwcPyiT8tGsLGxsS/Pzr+c8PIBUHXdZ/JSXsYD2NjY2CvYk1HOccCQh69nDaqSXw82Njb2HdjV2LVXwOaNTS/0xcbGxt7NThqD/MEJuHq3ahuDjY2NjZ2vQiYtQbUtmUTIUWnExsbGXsfOy0x+oOpIqDpU6oUE2NjY2JvYz+KVl4d8VNQLAPLw+J9vYWNjYy9iV4tBPuI5d9hUDaR7K0fY2NjY38uujoqS5mEeKiRRwWSdCBsbG3sfu1oYJqWuOpzqVd03d8bGxsa+Pbsa0OYNybmh8svTYmNjY9+eHf253wqAJyWqEB5gY2Njr2NXw93e0Ke6XtNrgaLXhI2Njb2IXS0VvcKWvLgE0wubmyUTGxsb++rsH49PzkqP9EKmAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '回来~';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '๑乛◡乛๑';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

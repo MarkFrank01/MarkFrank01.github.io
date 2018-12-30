@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>打造自定义刷新加载框架(一) | Five | Enjoy Code</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Android">
+    <meta name="description" content="打造属于自己的刷新框架！">
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="打造自定义刷新加载框架(一)">
+<meta property="og:url" content="https://markfrank01.github.io/2017/04/10/不想提交TAT/MySwipeRefresh01/index.html">
+<meta property="og:site_name" content="Five">
+<meta property="og:description" content="打造属于自己的刷新框架！">
+<meta property="og:image" content="https://markfrank01.github.io/img/自定义刷新加载框架1/fresh.jpg">
+<meta property="og:image" content="https://markfrank01.github.io/img/自定义刷新加载框架1/load.jpg">
+<meta property="og:updated_time" content="2018-07-11T14:54:02.442Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="打造自定义刷新加载框架(一)">
+<meta name="twitter:description" content="打造属于自己的刷新框架！">
+<meta name="twitter:image" content="https://markfrank01.github.io/img/自定义刷新加载框架1/fresh.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="Five" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/cat.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">嘉晨</h5>
+          <a href="mailto:1123212438@qq.com" title="1123212438@qq.com" class="mail">1123212438@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/MarkFrank01" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">打造自定义刷新加载框架(一)</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">打造自定义刷新加载框架(一)</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-04-10T15:15:32.000Z" itemprop="datePublished" class="page-time">
+  2017-04-10
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第一篇-自定义刷新加载框架（一）"><span class="post-toc-number">1.</span> <span class="post-toc-text">第一篇  自定义刷新加载框架（一）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#我们需要做什么"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">我们需要做什么</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第二篇将和大家分析并且手把手做，敬请期待哦"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">第二篇将和大家分析并且手把手做，敬请期待哦</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-不想提交TAT/MySwipeRefresh01"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">打造自定义刷新加载框架(一)</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-04-10 23:15:32" datetime="2017-04-10T15:15:32.000Z"  itemprop="datePublished">2017-04-10</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>打造属于自己的刷新框架！<br><a id="more"></a></p>
+<h2 id="第一篇-自定义刷新加载框架（一）"><a href="#第一篇-自定义刷新加载框架（一）" class="headerlink" title="第一篇  自定义刷新加载框架（一）"></a>第一篇  自定义刷新加载框架（一）</h2><p>相信大家使用刷新加载的框架有很多,像官方的Swiperefreshlayout或是一些诸如SuperSwiperefreshlayout,XRecyclerView之类的,大家应该也用过其中一些,今天给大家分享如何一个自定义一个属于自己的刷新加载框架。分为两篇从两种不同方式来实现我们的需求。<br>先看看我们实现的效果吧<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/自定义刷新加载框架1/fresh.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure><br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/自定义刷新加载框架1/load.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<h3 id="我们需要做什么"><a href="#我们需要做什么" class="headerlink" title="我们需要做什么"></a>我们需要做什么</h3><p>首先对于刷新加载的实现,我们首先需要想到的就是事件拦截,第一个思路我们从嵌套滑动的nestedscrolling下手，话不多说直接看代码。<br>我们先看一下最重要的方法onNestedPreScroll</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">   public void onNestedPreScroll(View target, int dx, int dy, int[] consumed) &#123;</div><div class="line">      if (totalY &lt; 0 &amp;&amp; myRecyclerView.isOrientation(0) || totalY &gt; 0 &amp;&amp; myRecyclerView.isOrientation(1)) &#123;</div><div class="line">          isfling = true;</div><div class="line">      &#125;</div><div class="line">//下拉刷新</div><div class="line">      if (IsRefresh) &#123;</div><div class="line">          if (dy &gt; 0) &#123;</div><div class="line">		//判断recyclerview为纵向而不是横向</div><div class="line">              if (myRecyclerView.isOrientation(0)) &#123;</div><div class="line">                  totalY += dy;</div><div class="line">                  if ((totalY / 2) &lt;= 0) &#123;</div><div class="line">                      scrollTo(0, totalY / 2);</div><div class="line">                      consumed[1] = dy;</div><div class="line">                  &#125; else &#123;</div><div class="line">                      scrollTo(0, 0);</div><div class="line">                      consumed[1] = 0;</div><div class="line">                  &#125;</div><div class="line">              &#125;</div><div class="line">              return;</div><div class="line">          &#125;</div><div class="line">      &#125;</div><div class="line">//上滑加载</div><div class="line">      if (IsLoad) &#123;</div><div class="line">          if (dy &lt; 0) &#123;</div><div class="line">		//判断recyclerview为纵向而不是横向</div><div class="line">              if (myRecyclerView.isOrientation(1)) &#123;</div><div class="line">                  totalY += dy;</div><div class="line">                  if ((totalY / 2) &gt;= 0) &#123;</div><div class="line">                      scrollTo(0, totalY / 2);</div><div class="line">                      consumed[1] = dy;</div><div class="line">                  &#125; else &#123;</div><div class="line">                      scrollTo(0, 0);</div><div class="line">                      consumed[1] = 0;</div><div class="line">                  &#125;</div><div class="line">              &#125;</div><div class="line">              return;</div><div class="line">          &#125;</div><div class="line">      &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<p>作为刷新，我们需要在onNestedPreScroll中去修改需要的x和y的值，这个时候就需要通过父的view进行拦截，那么我们通过对dy的判断即可以得出到底是在上滑还是在下拉，因为dy为正就是下拉，也就是刷新操作，dy为负就是上滑，也就是加载操作。</p>
+<p>我们在子view滑动结束后还要进行一个处理<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"> public void onNestedScroll(View target, int dxConsumed, int dyConsumed, int dxUnconsumed, int dyUnconsumed) &#123;</div><div class="line">    if (dyUnconsumed != 0) &#123;</div><div class="line">        totalY += dyUnconsumed;</div><div class="line">        scrollTo(0, totalY / 2);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>接着我们可以添加我们的header和footer</p>
+<pre><code>//添加头部的view
+public void addHeaderView(View headerView, int headerHeight) {
+    this.headerHeight = headerHeight;
+    this.headerLayout.removeAllViews();
+    this.headerLayout.addView(headerView);
+    LayoutParams layoutParams = new LayoutParams(LayoutParams.MATCH_PARENT, headerHeight);
+    layoutParams.topMargin = -headerHeight;
+    this.headerLayout.setLayoutParams(layoutParams);
+}
+
+//添加底部的view
+public void addFooterView(View footerView, int footerHeight) {
+    this.footerHeight = footerHeight;
+    this.footerLayout.removeAllViews();
+    this.footerLayout.addView(footerView);
+    this.footerLayout.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, footerHeight));
+}
+</code></pre><p>既然都重写了nestedscrolling那么我们也顺便重写一下recyclerView</p>
+<pre><code>private class MyRecyclerView extends RecyclerView {
+    private StaggeredGridLayoutManager staggeredGridLayoutManager = null;
+    private LinearLayoutManager linearLayoutManager = null;
+    private GridLayoutManager gridLayoutManager = null;
+    private boolean isScrollLoad = false;
+    private boolean isScrollRefresh = false;
+
+    public MyRecyclerView(Context context) {
+        super(context);
+        setVerticalFadingEdgeEnabled(false);
+        setHorizontalFadingEdgeEnabled(false);
+        setVerticalScrollBarEnabled(false);
+        setHorizontalScrollBarEnabled(false);
+        setOverScrollMode(OVER_SCROLL_NEVER);
+        setItemAnimator(new DefaultItemAnimator());
+    }
+
+    private void setMyLayoutManager(LayoutManager layoutManager) {
+        if (layoutManager instanceof StaggeredGridLayoutManager) {
+            staggeredGridLayoutManager = (StaggeredGridLayoutManager) layoutManager;
+        } else if (layoutManager instanceof GridLayoutManager) {
+            gridLayoutManager = (GridLayoutManager) layoutManager;
+        } else if (layoutManager instanceof LinearLayoutManager) {
+            linearLayoutManager = (LinearLayoutManager) layoutManager;
+        }
+        setLayoutManager(layoutManager);
+        if (!isVertical()) {
+            throw new NullPointerException(&quot;vertical!&quot;);
+        }
+    }
+
+    //orientation
+    // 0 menas down
+    // 1 means up
+    private boolean isOrientation(int orientation) {
+        if (orientation == 0)
+            return isCanPullDown();
+        else if (orientation == 1)
+            return isCanPullUp();
+        return false;
+    }
+
+    private boolean isCanPullDown() {
+        return !canScrollVertically(-1);
+    }
+
+    private boolean isCanPullUp() {
+        return !canScrollVertically(1);
+    }
+
+    private boolean isVertical() {
+        if (staggeredGridLayoutManager != null)
+            return staggeredGridLayoutManager.getOrientation() == StaggeredGridLayoutManager.VERTICAL;
+        else if (linearLayoutManager != null)
+            return linearLayoutManager.getOrientation() == LinearLayoutManager.VERTICAL;
+        else if (gridLayoutManager != null)
+            return gridLayoutManager.getOrientation() == GridLayoutManager.VERTICAL;
+        return false;
+    }
+}
+</code></pre><p>这样我们就可以自己使用自己的刷新框架啦。<a href="https://github.com/MarkFrank01/CollectUIView" title="MySwipeRefresh01" target="_blank" rel="external">具体详见github的MySwipeRefresh01</a></p>
+<p>有两点需要注意的：第一个就是加载和刷新的view,这两个是可以自己重写动画定制自己想要的view，目前我仅仅是添加了两个文字提示。第二个就是还可以根据需要添加如滑动阻尼，这里暂时还没有加入。</p>
+
+<blockquote>
+<p>接下来我们需要自己去做一个能够用于实际工作中的SwipRefresh。</p>
+</blockquote>
+<h3 id="第二篇将和大家分析并且手把手做，敬请期待哦"><a href="#第二篇将和大家分析并且手把手做，敬请期待哦" class="headerlink" title="第二篇将和大家分析并且手把手做，敬请期待哦"></a>第二篇将和大家分析并且手把手做，敬请期待哦</h3><pre><code>5/11/2017 12:19:44 PM 第4次修改
+</code></pre>
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-07-11T14:54:02.442Z" itemprop="dateUpdated">2018-07-11 22:54:02</time>
+</span><br>
+
+
+        
+        小小鼓励一下哟~~，转发著名出处~~：<a href="/2017/04/10/不想提交TAT/MySwipeRefresh01/" target="_blank" rel="external">https://markfrank01.github.io/2017/04/10/不想提交TAT/MySwipeRefresh01/</a>
+        
+    </div>
+    <footer>
+        <a href="https://markfrank01.github.io">
+            <img src="/img/cat.jpg" alt="嘉晨">
+            嘉晨
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://markfrank01.github.io/2017/04/10/不想提交TAT/MySwipeRefresh01/&title=《打造自定义刷新加载框架(一)》 — Five&pic=https://markfrank01.github.io/img/cat.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://markfrank01.github.io/2017/04/10/不想提交TAT/MySwipeRefresh01/&title=《打造自定义刷新加载框架(一)》 — Five&source=打造属于自己的刷新框架！" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://markfrank01.github.io/2017/04/10/不想提交TAT/MySwipeRefresh01/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《打造自定义刷新加载框架(一)》 — Five&url=https://markfrank01.github.io/2017/04/10/不想提交TAT/MySwipeRefresh01/&via=https://markfrank01.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://markfrank01.github.io/2017/04/10/不想提交TAT/MySwipeRefresh01/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/03/27/不想提交TAT/js异步和网络api发展史/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">js异步和网络Api发展史</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/04/14/不想提交TAT/MySwipeRefresh02/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">打造自定义刷新加载框架(二)</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大家~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechatpay.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechatpay.jpg" data-alipay="/img/alipayMe.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>嘉晨 &copy; 2015 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://markfrank01.github.io/2017/04/10/不想提交TAT/MySwipeRefresh01/&title=《打造自定义刷新加载框架(一)》 — Five&pic=https://markfrank01.github.io/img/cat.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://markfrank01.github.io/2017/04/10/不想提交TAT/MySwipeRefresh01/&title=《打造自定义刷新加载框架(一)》 — Five&source=打造属于自己的刷新框架！" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://markfrank01.github.io/2017/04/10/不想提交TAT/MySwipeRefresh01/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《打造自定义刷新加载框架(一)》 — Five&url=https://markfrank01.github.io/2017/04/10/不想提交TAT/MySwipeRefresh01/&via=https://markfrank01.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://markfrank01.github.io/2017/04/10/不想提交TAT/MySwipeRefresh01/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtUlEQVR42u3awVLjQAwEUP7/p5cqTkuFmG7JE3J4OaUSsOfNwaO09PERv/59vR4/+f/1+Pmzv3y82vVdnn172wsPDw9vtPTrRVwvN9+a6/9NtilfMx4eHt5pXr6s2XM4OVTy6+RHCx4eHt7f8pJien/NvHDHw8PDe3/eLGjYHA9tMIGHh4f3Sl5Swrahah68tht3JGvBw8PDi3ltA+wd3h/s7+Hh4eEtuupts38WKOSP+3q1eHh4eAd4yajTLD5oRwTaoauixMfDw8M7wNvUom3YmgNmsUV0HTw8PLwFLz8S8oi23cv82/w9Hh4e3jne9cM6HwiYFc2zLbgtjMDDw8Nb8zZBwOZI2G9flLXg4eHh3cTbjzRt4tS8MTYs8fHw8PAO8JLbbBY0275kPatMGg8PD+8mXv7jf9bynxXQs8MJDw8P7zW8zWhUi5zFte2a8fDw8E7w2gBidgDsB62GJTUeHh7eMd65EHYWKCRhx/X24eHh4Z3mJYXyvk3VxrizWOTbJ3h4eHgHeO1AVXubPD6YHS1RmIuHh4d3gJeXzn9VTJ8b1cLDw8Ob8aIuWfzoX5W/l4wbIgk8PDy8m3htydsOXeUBREutfzfg4eHhHeC1scIelh88bbmPh4eHd4K3fxxvYoV8kKttm0XJLh4eHt6CNzsY2tu3M1Et5oer4eHh4R3gzVr+7W3y0YTNt0+vj4eHh3crb/ZvbVtrdlTk8cQvnT08PDy8w7y2YX9XqNGOVUU/APDw8PAO8NpW02ww667QIX9fg/Hw8PBKXnvp9iHeHhVtJPHLavHw8PCO8ZIGVXI8tLHvXeUyHh4e3nvy8ibZvZuVX+2Hv8fDw8N7G17emtqMc7VrKyYj8PDw8Na8PCBoA9Y2ut0U8Xh4eHiv4c1+6iexQjussAkpVgMEeHh4eCnvE0DZac5QW1+JAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '回来~';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '๑乛◡乛๑';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
